@@ -10,14 +10,31 @@ public class Main {
         double[] result = new double[opCode.length];
 
         // version switch
-        for(int i = 0; i < opCode.length; i++) {
-            result[i] = executeMathOperation(opCode[i], leftVal[i], rightVal[i]);
+        if(args.length == 0) {
+            for(int i = 0; i < opCode.length; i++) {
+                result[i] = executeMathOperation(opCode[i], leftVal[i], rightVal[i]);
+            }
+
+            for(double res : result) {
+                System.out.println("\tResult = " + res + "\n");
+            }
+        }
+        else if(args.length == 3) {
+            handleCommandLineArgs(args);
+        }
+        else {
+            System.out.println("\tPlease provide an operation code and 2 numeric values!");
         }
 
-        for(double res : result) {
-            System.out.println("\tResult = " + res + "\n");
-        }
+    }
 
+    private static void handleCommandLineArgs(String[] args) {
+        char opCode = args[0].charAt(0);
+        double leftVal = Double.parseDouble(args[1]);
+        double rightVal = Double.parseDouble(args[2]);
+
+        double result = executeMathOperation(opCode, leftVal, rightVal);
+        System.out.println("\tResult = " + result + "\n");
     }
 
     static double executeMathOperation(char opCode, double leftVal, double rightVal) {
