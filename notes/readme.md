@@ -4,7 +4,7 @@ NOTE:
 These notes are the notes that were taken by Ashbie B. Mweemba while he was learning/Re-learning Java from Pluralsight courses.
 Part of these notes came from AI responses to Ashbie's questions/prompts about certain things (concepts/topics etc).
 ```
-## Understanding Methods
+# 6. Understanding Methods
 
 The return value of a method:
   - can use a variable
@@ -18,14 +18,15 @@ The return value of a method:
 - Command-line arguments are provided as part of launching the program
   ![alt text](image-2.png)
 
-## Strings
+# 7. Working with Strings
+## 7.1 Intro
 
 ![alt text](image-3.png)
 
 - The StringBuilder actually constructs strings piece by piece much more efficiently than the String class itself.
 - So why do we have the better building functionnality in the StringBuilder class and not the String class??
 
-### String Class
+### 7.2 String Class
 ![string class image](image-4.png)
 - Technically they're stored in what's known as UTF-16 format (meaning: They can store any charater in any language you're likely to work with)
 ### Characteristics
@@ -34,7 +35,8 @@ The return value of a method:
 ![alt text](image-6.png)
 ![alt text](image-7.png)
 
-###  **Equality**
+### 7.3 String Equality
+### Reference Equality operator `==`
 There is something important we need to understand about the equality operator when applying it to strings.
 The equality operator does not check the value of the string instance itself. 
 The equality operator simply checks to see if both string variables reference the same string instance.
@@ -51,6 +53,7 @@ if(s1 == s2)
 What will this equality result to?
 - R. According to chatGPT, it would return true. 
 I have to test this!!!
+### Value Equality method `.equals()` 
 ### **When we want to know if the values are the same:**
 We use the .equals() method
 ![alt text](image-9.png)
@@ -116,7 +119,7 @@ In Java, for instance, string literals are automatically interned, meaning they 
 
 This question is often asked to test knowledge about **string pooling**, **memory optimization**, and **how strings are managed differently from other objects** in languages like Java and C#. It helps confirm a strong understanding of references and memory management in object-oriented languages.
 
-## String Literals are automatically interned by Java OR String Literals are automatically placed in the Spring Pool memory area
+### String Literals are automatically interned by Java OR String Literals are automatically placed in the Spring Pool memory area
 ##### But Wait:
 Q. So are you telling me I can't instantiate a second string from a first string that was instantiated using a string literal (meaning: the first string wasn't instantiated using the key word **new**)?
 like this: 
@@ -277,7 +280,7 @@ System.out.println("Which instance will be stored in the 'String Pool' and which
 
 In this case:
 - **Both `literalString` and `concatenatedStringWL` reference the same instance in the String Pool**.
-- There is no new instance created in the **Heap/Free Store** because the concatenation involves only literals, enabling compile-time optimization. 
+- There is no new instance created in the **Heap/Free Store** because the concatenation involves only literals, enabling [compile-time](#runtime-and-compile-time) optimization. 
 
 If you print `literalString == concatenatedStringWL`, it would return `true` because both variables point to the same interned string instance.
 
@@ -324,7 +327,7 @@ System.out.println(s1 == s3);      // false, because s1 refers to the heap insta
 So, both literals and explicitly interned string objects can be stored in the string pool, allowing efficient memory use and reference equality where desired.
 
 ## Yes! They are actually objects!
-So calling the intern() method on a string object will no move the object to the string pool BUT it will create a new object in the string pool; so there will be 2 objects with the same value but one will be in the heap while the other will be in the string pool, right?
+So calling the intern() method on a string object will not move the object to the string pool BUT it will create a new object in the string pool; so there will be 2 objects with the same value but one will be in the heap while the other will be in the string pool, right?
 
 *Yes, that's correct!*
 
@@ -440,8 +443,70 @@ In this example:
 So, you’re right to observe that **Java references are more similar to C++ pointers than to C++ references**!
 
 
+### Recap: Equality
+So in Java when it comes to Strings, can I call this operator `==` is called the *Reference Equality* operater WHILE calling this method `String.equals()` the *Value Equality*  method ?
 
+Yes, exactly! That’s a very accurate way to describe the distinction in Java:
 
+- The **`==` operator** in Java can be thought of as a **Reference Equality** operator when applied to objects, including strings. It checks whether two references point to the exact same object in memory.
+
+- The **`.equals()` method** in Java is indeed a **Value Equality** method for `String` objects (and other objects that override `.equals()`). It checks whether the **content** (or **value**) of two strings is the same, regardless of whether they are the same object in memory.
+
+### Summary:
+
+- **Reference Equality (`==`)**: Checks if two references point to the same object instance.
+- **Value Equality (`.equals()`)**: Checks if two strings contain the same sequence of characters (the same value).
+
+This distinction is fundamental when working with strings in Java! Here’s a quick example:
+
+```java
+String str1 = new String("hello");  // A new String object on the heap
+String str2 = new String("hello");  // Another new String object on the heap
+
+System.out.println(str1 == str2);        // false, different objects (reference equality)
+System.out.println(str1.equals(str2));   // true, same value (value equality)
+```
+
+So yes, calling `==` the *Reference Equality* operator and `.equals()` the *Value Equality* method is a clear and correct way to remember their purposes in Java.
+
+## 7.4 String Methods and String Conversions
+![alt text](image-12.png)
+![alt text](image-13.png)
+- use `String.valueOf()` to convert from other data types to String
+- Java can also automatically convert other data types to the String data type if it finds:
+   1. **Concatanation** of Strings with other data types
+    *Just like in the image above*
+
+## 7.5 Adding String support to CalcEngine
+![alt text](image-14.png)
+
+![alt text](image-15.png)
+
+#### We want to get input from the user
+When sending information **out** to the user, we've been using ` System.out `
+![alt text](image-17.png)
+So it would make sense to use `System.in` to get input from the user
+BUT working directly with `System.in` requires a fair bit of house keeping for us
+So what we do is use another type that takes care of that house keeping, and that's a type known as **Scanner**
+
+![alt text](image-16.png)
+Data Type names are qualified by the packages they're contained in.
+So that's where the import statement comes in.
+By saying `import java.util.Scanner`, that tells the Java compiler that anytime I use the data type **`Scanner`**, I actually mean *`java.util.Scanner`*. So it gives me a shorthand for dealing with the type.
+
+### How to use `Scanner` aka `java.util.Scanner`
+```Java
+import java.util.Scanner;
+
+Scanner scanner = new Scanner(System.in);
+String userInput = scanner.nextLine();
+```
+1. You create a **new** instance of **Scanner** 
+2. You pass in `System.in`
+*What will happen is the instance of Scanner will now take care of the details of getting input from the user.*
+*All you have to do is ask that Scanner instance for that input*
+3. Ask for the input by calling the `.nextLine()` method
+*So what that `scanner.nextLine()` will do is it will read all the input from the user until they hit the **Enter** key, and then it will give you that input as a **String**.*
 
 
 
@@ -713,6 +778,7 @@ The reason the concatenation happens at **runtime** and not **compile-time** is 
 
 However, in the example you provided, the second part of the concatenation (`s1 += " Java"`) involves a **variable** (`s1`), which makes it impossible for the compiler to determine the result at compile-time.
 
+>>>>>
 ### Summary
 
 - **Runtime**: When the program is executing and when dynamic operations (like string concatenation with variables) are carried out.
