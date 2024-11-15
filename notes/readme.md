@@ -12,7 +12,6 @@ These notes were taken by Ashbie B. Mweemba during his study and review of Java 
 border-left: 5px solid #2196f3;
 
 Change the note to have PluralSight colors
-``` -->
 <head>
    <style>
       /* resembleChatGPT's -codeTerminal */
@@ -24,9 +23,9 @@ Change the note to have PluralSight colors
       }
    </style>
 </head>
-<div id="note-info" class="codeTerminal-container">
+<div id="note-info" class="codeTerminal-container" style="background-color: #e0f3ff; padding: 1em; border-radius: 8px;  padding-top: 72px; position: relative; overflow: auto;">
 
-   <div class="codeTerminal-header">
+   <div class="codeTerminal-header"  style="background-color: #2196f3; padding: 1em; border-radius: inherit; position: absolute; top: 0; right: 0; left: 0; border-bottom-left-radius: 0; border-bottom-right-radius: 0; color: #fff; font-weight: 900; font-size: 16px;">
       Note
    </div>
    <p class="codeTerminal-body">
@@ -34,6 +33,11 @@ Change the note to have PluralSight colors
    </p>
 
 </div>
+``` -->
+**Note:**
+
+These notes were taken by Ashbie B. Mweemba during his study and review of Java through Pluralsight courses. Some sections also include insights from ChatGPT in response to specific questions and prompts related to various concepts.
+
 
 # 6. Understanding Methods
 
