@@ -1,4 +1,4 @@
-# Java SE Fundamentals
+# JAVA SE FUNDAMENTALS
 <!-- ```console
 NOTE:
 These notes are the notes that were taken by Ashbie B. Mweemba while he was learning/Re-learning Java from Pluralsight courses.
@@ -545,10 +545,13 @@ String userInput = scanner.nextLine();
 
 ## 7.8 StringBuilder
 [StringBuilder's purporse](#anchor-point---78q-sbs-purpose)
-Let's take a look now at the StringBuilder class. The StringBuilder class provides a mutable string buffer. Remember when we first looked at strings, we mentioned that strings were immutable, and that meant that any modifications we make to a string don't actually change that string, but create an entirely new string. And that was something we had to keep in mind if we had to build up a string piece by piece because doing it that way wouldn't be particularly efficient. So what the StringBuilder class does is give us a way to efficiently construct string values piece by piece. So it has an append method that allows us to add content to the end of the string buffer, and it has an insert method that allows us to insert content within the string buffer. Now it's important to understand that the StringBuilder itself is not a string. Once you build the content that you're interested in, you need to extract the string from the StringBuilder instance. And we do that by using StringBuilder's toString method. 
+
+Let's take a look now at the StringBuilder class. The StringBuilder class provides a mutable string buffer. Remember when we first looked at strings, we mentioned that strings were immutable, and that meant that any modifications we make to a string don't actually change that string, but create an entirely new string. And that was something we had to keep in mind if we had to build up a string piece by piece because doing it that way wouldn't be particularly efficient. So what the StringBuilder class does is give us a way to efficiently construct string values piece by piece. So it has an append method that allows us to add content to the end of the string buffer, and it has an insert method that allows us to insert content within the string buffer. Now it's important to understand that the StringBuilder itself is not a string. Once you build the content that you're interested in, you need to extract the string from the StringBuilder instance. And we do that by using StringBuilder's toString method.
+
 ![alt text](image-18.png)
 
 So let's take a look at some code.
+
 ![alt text](image-19.png)
 
 So we've got two variables here, a String variable, location, with the value of Florida and an integer variable, flightNumber, with the value 175. Let's say I want to build the string, I flew to, and take whatever the value of location is on Flight # and take the value of our flightNumber variable. So I need to build the string up piece by piece.
@@ -578,9 +581,13 @@ So once I have my insert position, I can call sb.insert, provide that position a
 - So just take that re-usable position (pointer) and use it in the `insert()` method of the StringBuilder instance.
    * This will be our **one** line of code
 - We can read the one line of code like this: 
+
    - ***insert(***
-      *`param1:` at the new position, which we obtained by adding 4 to the previous postion pointer,*
-      *`param2:` the time String*
+
+      *`param1:where` at the new position --which we obtained by adding 4 to the previous postion pointer--,*
+
+      *`param2:what` the time String*
+
    ***)***
 
 ![alt text](image-35.png)
@@ -591,8 +598,8 @@ So once I have my insert position, I can call sb.insert, provide that position a
 #### 3. Final Result
 ![alt text](image-29.png)
 
-### 7.8.Q. StringBuilder questions section
-#### 7.8.Q.1. Heap or String Pool
+## 7.8.Q. StringBuilder questions section
+### 7.8.Q.1. Heap or String Pool
 **Question:**
 *`In which memory section is the object placed in? (Which object am I talking about? I'm talking about the object that is referenced by what is returned when StringBuilder's .toString() method is called?`*
 
@@ -616,7 +623,7 @@ Here’s why:
 
 If you wanted `message` to reference an interned `String`, you would need to call `message = sb.toString().intern();`. Otherwise, it will remain a distinct `String` object on the heap.
 
-#### 7.8.Q.2 Calling .intern() on an already interned String
+### 7.8.Q.2 Calling .intern() on an already interned String
 **Question:**
 What happens when I call `String.intern()` on a String instance that is already on/in the String Pool?
 
@@ -631,7 +638,7 @@ Here's the step-by-step explanation of what happens:
 
 3. **No New Object Created**: No new `String` object is created, and no additional memory allocation occurs since the string is already in the pool. Interning is simply about ensuring that all references to the same string content point to the single instance in the pool.
 
-### Example
+#### Example
 
 ```java
 String s1 = "hello";     // "hello" is a string literal, so it's in the String Pool.
@@ -641,30 +648,152 @@ System.out.println(s1 == s2); // true, because both s1 and s2 refer to the same 
 
 In this example, calling `s1.intern()` on a literal simply returns the existing reference in the pool.
 
+### 7.8.Q.3 StringBuilder best practices
+**Question:**
+
+If I write this:
+```java
+StringBuilder sb = new StringBuilder(20);
+sb.append("an un-concatenated string literal");
+sb.append("a concatenated"+" string literal");
+String sbBuiltString = sb.toString();
+```
+Does appending a concatenated String to the StringBuilder buffer have a performance cost?
+Whether it be the concatenation of :
+1. Constants
+2. Variables
+3. Constants and Variables together
+
+Which leads me to my other question:
+What are the best practices to append strings (or other data types) when using StringBuilder
+
+**Response:**
+
+Using `StringBuilder` is generally efficient for building strings, especially when you need to concatenate multiple parts. However, let’s break down the performance considerations based on the type of concatenation you’re appending to a `StringBuilder`.
+
+#### 1. Concatenating Constants
+```java
+sb.append("a concatenated" + " string literal");
+```
+When you concatenate constant strings (literals) like `"a concatenated" + " string literal"`, **constant folding** will happen at compile time. The compiler combines the two literals into one single string, so the `StringBuilder` effectively appends `"a concatenated string literal"` as a single operation. In this case, there's no additional performance cost because no concatenation happens at runtime.
+
+#### 2. Concatenating Variables
+```java
+String part1 = "a concatenated";
+String part2 = " string literal";
+sb.append(part1 + part2);
+```
+When you concatenate variables, the `+` operator creates a temporary `StringBuilder` internally, performs the concatenation, and then converts the result back to a `String`. This intermediate step can be a slight performance hit because it creates temporary objects on the heap. Using `sb.append(part1).append(part2)` instead avoids this overhead and is more efficient.
+
+#### 3. Concatenating Constants and Variables
+```java
+String part = " string literal";
+sb.append("a concatenated" + part);
+```
+Concatenating a constant and a variable also results in runtime concatenation. Here, Java internally creates a temporary `StringBuilder`, performs the concatenation, and then converts it back to a `String`. This can be less efficient than appending each part directly. Writing `sb.append("a concatenated").append(part)` avoids this intermediate step.
+
+#### Best Practices for Appending with `StringBuilder`
+To maximize efficiency, follow these best practices when using `StringBuilder`:
+
+1. **Avoid `+` for Concatenation Inside `append`**: Use `append` directly for each part, rather than concatenating with `+` and passing the result. This prevents the creation of unnecessary temporary `StringBuilder` objects.
+   ```java
+   sb.append("a concatenated").append(" string literal");
+   ```
 
+2. **Chain `append` Calls**: If you’re appending multiple variables or literals, chaining `append` calls is generally more efficient than calling `append` on a single concatenated string.
+   ```java
+   sb.append("Part1").append("Part2").append(variable);
+   ```
 
+3. **Avoid Mixed-Type Concatenation**: If you’re combining different types (e.g., `String` with `int`), use multiple `append` calls rather than concatenating them with `+`.
+   ```java
+   int number = 42;
+   sb.append("The answer is ").append(number);
+   ```
 
+4. **Use a Single `StringBuilder` for Long Operations**: If you need to construct a complex string over many operations, it’s better to use one `StringBuilder` rather than creating temporary strings along the way.
 
+#### Example
+To see these best practices in action:
+```java
+StringBuilder sb = new StringBuilder();
+sb.append("The number is ")
+  .append(42)
+  .append(" and the word is ")
+  .append("concatenated");
 
+String result = sb.toString();
+```
 
+By following these guidelines, you avoid the creation of unnecessary intermediate objects and make the best use of `StringBuilder`'s capabilities for efficient string manipulation.
 
+### 7.8.Q.3.2 System.out & Strings (Related to previous question)
+**Question**
 
+Okay.
+Now look at this:
+```java
+    private static void displayResult(double result) {
+        System.out.println("Output>> Result = " + result + "\n");
+        // the bottom text should come at the end when I Type exit
+        System.out.println("" +
+                "\n*********************************************************************************************************************************************" +
+                "\n*********************************************************************************************************************************************" +
+                "\n***************************                                                                                     *****************************" +
+                "\n***************************        Inc. Way                                                                     *****************************" +
+                "\n***************************                                                                                     *****************************" +
+                "\n***************************        Inconvenient-Calculator App (Inc. Calc TM) is a product of Inc. Way          *****************************" +
+                "\n***************************                                                                                     *****************************" +
+                "\n***************************        The Inc. Way mission:                                                        *****************************" +
+                "\n***************************        To help the world appreciate the conveniences of life :)                     *****************************" +
+                "\n***************************                                                                                     *****************************" +
+                "\n***************************        The Inc. Way slogan:                                                         *****************************" +
+                "\n***************************        Why do it the convenient way, when you can do it the Inc. Way                *****************************" +
+                "\n***************************                                                                                     *****************************" +
+                "\n***************************                                                                                     *****************************" +
+                "\n***************************                                                                                     *****************************" +
+                "\n*********************************************************************************************************************************************" +
+                "\n*********************************************************************************************************************************************"
+        );
+    }
+```
 
+What if I choose to directly print my String using `System.out` and skip building it using StringBuilder?
 
+I now know that constant folding is going to occur for the Strings in the second print statement. And the result of that will be one String literal, which Java is automatically going to intern and store in the String Pool. So the concatenation that going to occur for the Strings in  second print statement is Compile-time concatenation.
 
+But for the Strings in my first print statement, they are not all constants because one of them is a variable. So runtime concatenation is what will happen. When concatenating the Strings, a new String instance on the heap will have to be instanciated because Strings are immutable.
 
+And I guess it would have been better for me to make that backslash-n `\n` a char data type and not a String literal because I think the memory and time overhead that are going to be incurred (because of how String literals are managed in memory) are not worth it for just a single character.
 
+What do you think? 
 
+**Response**
 
+Your understanding here is spot-on, especially about constant folding, compile-time vs. runtime concatenation, and immutability in Java. Here’s a bit more on each point:
 
+1. **String Concatenation in `System.out.println`:**
+   Since your second `println` statement is made up of constants, it will indeed be concatenated at compile time and stored as a single interned literal in the String Pool. This approach is efficient since no new object will be created at runtime.
 
+2. **Using `\n` as a Character vs. String Literal:**
+   For single characters like `\n`, using a `char` does indeed have less overhead than using a String literal. However, the difference in memory usage is minimal here. Changing `"\n"` to `'\n'` would technically reduce the number of String literals created, but the impact is minor unless you’re working in a memory-constrained environment or creating these literals frequently.
 
+3. **Overall Efficiency:**
+   Skipping `StringBuilder` in this case is perfectly fine. Java’s compile-time optimization will make this code efficient, and because the second `println` statement is a single literal after constant folding, there’s no need to construct it dynamically. 
 
+Your thought process is thorough and shows a good understanding of Java’s handling of literals and memory efficiency. If you’d like, I can help with additional examples or refinements!
 
+**Follow-up Question**
 
+But isn't the principle or best practice to use StringBuilder when building Strings that have concatenations with variables?
+And keep in mind that this is just a section of my code. My code could have other areas where I'm concatenating Strings that have variables.
+So shouldn't I refine/modify my code to incorporate StringBuilder built Strings especially in places where I have variable concatenations?
 
+**Response**
 
+Yes, you're correct—when your code involves multiple concatenations with variables, it’s generally a good idea to use `StringBuilder` to improve performance. Java's `+` operator on `String` variables (especially in a loop or in sections with frequent concatenations) can lead to unnecessary temporary `String` objects being created on the heap. This overhead can be minimized by using `StringBuilder`, which is mutable and optimized for such concatenation tasks.
 
+So, in your case, refining your code to use `StringBuilder` in areas with variable concatenations would indeed align with best practices. It will help reduce the number of intermediate `String` objects created, making your code more efficient, especially in scenarios where the concatenation operations are repeated.
 
 
 
@@ -749,8 +878,30 @@ In this example, calling `s1.intern()` on a literal simply returns the existing 
 
 
 
-# Some Terms and Definitions
-### Literals
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# GLOSSARY: Some Terms and Definitions
+## Literals
 
 - In programming, literals are fixed values that are directly written into code and represent specific values for fundamental data types. Unlike variables, which store data that can change, literals are constant values written exactly as they should be used in the program.
 - Examples:
@@ -764,7 +915,7 @@ boolean isReady = true;    // true is a boolean literal
 Object obj = null;         // null is a null literal
 ```
 
-### Immutability
+## Immutability
 In programming, **immutable** refers to an object or data structure whose state cannot be modified after it is created. Once an immutable object is initialized with a specific value, it remains constant throughout its lifetime. This concept is particularly important in languages and environments where data integrity, thread safety, or functional programming paradigms are emphasized.
 
 ### Characteristics of Immutability
@@ -797,7 +948,7 @@ In programming, **immutable** refers to an object or data structure whose state 
 
 In summary, **immutability** ensures that once an object is created with a value, that value cannot be altered, making the object predictable, reliable, and often safer to use in concurrent or complex code.
 
-### Concurrent programming
+## Concurrent programming
 **Concurrent programming** is a programming approach that allows multiple tasks (or units of work) to be executed simultaneously or interleaved within the same time period. In concurrent programming, different parts of a program can execute independently, often making use of **multithreading**, **parallelism**, and **asynchronous execution** to achieve this.
 
 ### Key Concepts in Concurrent Programming

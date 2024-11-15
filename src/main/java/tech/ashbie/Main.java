@@ -45,67 +45,100 @@ public class Main {
 
     // method that handles the details of getting the input from the user
     static void handleCollectionOfUserInputInteractivly() {
-        System.out.println("" +
-                "\n*****************************************************************************************************" +
-                "\n*****************************************************************************************************" +
-                "\n***************************                                             *****************************" +
-                "\n***************************          Inconvenient-Calculator App        *****************************" +
-                "\n***************************                                             *****************************" +
-                "\n*****************************************************************************************************" +
-                "\n*****************************************************************************************************" +
-                "" +
-                "" +
-                "" +
-                "\n\n::::::::::::::::::::      About   " +
-                "\n\nThis a Java console calculator app that performs a mathematical operation/calculation on two(2) numbers/operands" +
-                "" +
-                "" +
-                "\n\n::::::::::::::::::::      Instructions" +
-                //"\nHow to use the app (Input Format)" +
-                "\nIn order to perform a mathematical operation on two numbers, you'll need to provide THREE things:" +
-                "\n\tAn operation-code           ( In words/String format. Do NOT input a math symbol!!! )                         " +
-                "\n\tA left-operand              ( aka the 1st-number )                               " +
-                "\n\tA right-operand             ( aka the 2nd-number )                               " +
-                "" +
-                "\n\nInput the THREE requirements as shown in the format below:" +
-                "\n\t\toperation-code left-operand/1st-number right-operand/2nd-number " +
-                "\n\nThe table below shows the operation-codes accepted by the app." +
-                "\n ** operation-codes are listed under the 'OPERATION-CODE' column **" +
-                "\n\t\tOPERATION-CODE       LEFT-OPERAND/1st-NUMBER        RIGHT-OPERAND/2nd-NUMBER       CALCULATION-TO-PERFORM" +
-                "\n\t\tadd                  a                              b                              a + b" +
-                "\n\t\tsubtract             a                              b                              a - b" +
-                "\n\t\tmultiply             a                              b                              a x b" +
-                "\n\t\tdivide               a                              b                              a / b" +
-                "" +
-                "" +
-                "\n\nExamples showing how to input calculations" +
-                "\n(+) Addition Example: " +
-                "\n\t\tInput>> add one one"  +
-                "\n\t\tOutput>> Result = 2 " +
-                "\n\n(-) Subtraction Example: " +
-                "\n\t\tInput>> subtract eight five" +
-                "\n\t\tOutput>> Result = 3"+
-                "\n\n(x) Multiplication Example: " +
-                "\n\t\tInput>> multiply six three"  +
-                "\n\t\tOutput>> Result = 18 " +
-                "\n\n(/) Division Example: " +
-                "\n\t\tInput>> divide six two"  +
-                "\n\t\tOutput>> Result = 3 " +
-                "" +
-                "" +
-                "\n\n::::::::::::::::::::      Input & Output area" +
-                "\nEnter your input below (after reading the instructions above): "
-        );
+        StringBuilder sbHeader = new StringBuilder();
+        sbHeader.append(":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::")
+        .append("\n:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::")
+        .append("\n:::::::::::::::::::::::::::                                             :::::::::::::::::::::::::::::")
+        .append("\n:::::::::::::::::::::::::::          Inconvenient-Calculator App        :::::::::::::::::::::::::::::")
+        .append("\n:::::::::::::::::::::::::::                                             :::::::::::::::::::::::::::::")
+        .append("\n:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::")
+        .append("\n:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::\n\n")
+        .append("Type 'help' or '-h' for help")
+        .append("\nType 'exit' or 'stop' to quit the app");
+        String headerText = sbHeader.toString();
 
-        System.out.print("Input>> ");
+        StringBuilder sbInstructions = new StringBuilder();
+        sbInstructions.append("\n\n::::::::::::::::::::      About   ")
+        .append("\n\nThis a Java console calculator app that performs a mathematical operation/calculation on two(2) numbers/operands")
+        .append("\n\n::::::::::::::::::::      Instructions")
+        .append("\nIn order to perform a mathematical operation on two numbers, you'll need to provide THREE things:")
+        .append("\n\tAn operation-code           ( In words/String format. Do NOT input a math symbol!!! )                         ")
+        .append("\n\tA left-operand              ( aka the 1st-number )                               ")
+        .append("\n\tA right-operand             ( aka the 2nd-number )                               ")
+        .append("\n\nInput the THREE requirements as shown in the format below:")
+        .append("\n\t\toperation-code left-operand/1st-number right-operand/2nd-number ")
+        .append("\n\nThe table below shows the operation-codes accepted by the app.")
+        .append("\n ** operation-codes are listed under the 'OPERATION-CODE' column **")
+        .append("\n\t\tOPERATION-CODE       LEFT-OPERAND/1st-NUMBER        RIGHT-OPERAND/2nd-NUMBER       CALCULATION-TO-PERFORM")
+        .append("\n\t\tadd                  a                              b                              a + b")
+        .append("\n\t\tsubtract             a                              b                              a - b")
+        .append("\n\t\tmultiply             a                              b                              a x b")
+        .append("\n\t\tdivide               a                              b                              a / b")
+        .append("\n\nExamples showing how to input calculations")
+        .append("\n(+) Addition Example: ")
+        .append("\n\t\tInput>> add one one")
+        .append("\n\t\tOutput>> Result = 2 ")
+        .append("\n\n(-) Subtraction Example: ")
+        .append("\n\t\tInput>> subtract eight five")
+        .append("\n\t\tOutput>> Result = 3")
+        .append("\n\n(x) Multiplication Example: ")
+        .append("\n\t\tInput>> multiply six three")
+        .append("\n\t\tOutput>> Result = 18 ")
+        .append("\n\n(/) Division Example: ")
+        .append("\n\t\tInput>> divide six two")
+        .append("\n\t\tOutput>> Result = 3 ");
+        String instructionsText = sbInstructions.toString();
 
-        Scanner scanner = new Scanner(System.in);
-        String userInputString = scanner.nextLine(); // We have the input <--here
-        // Once we have input -> Break it into it's individual parts ( using .split() method of the String instance )
-        String[] arrayOfOpCodeAndNumbersInWords = userInputString.split(" ");
-        // Interactivity task is done.
-        // Hand over to other task.
-        handleUserInputToMathOperation(arrayOfOpCodeAndNumbersInWords);
+        //        StringBuilder sbInputText = new StringBuilder();
+        //        sbInputText.append("\n\n::::::::::::::::::::      Input & Output area");
+
+        boolean repeatProcess = true;
+        System.out.println(headerText);
+        do {
+            System.out.print("Input>> ");
+
+            Scanner scanner = new Scanner(System.in);
+            String userInputString = scanner.nextLine(); // We have the input <--here
+            // Quit app
+            if(userInputString.equals("exit") || userInputString.equals("stop") || userInputString.equals("end") || userInputString.equals("quit") || userInputString.equals("q")) {
+                repeatProcess = false;
+                continue;  // <--- will break;(instead of continue;) work too ?
+            }
+            // display help (instructions)
+            if(userInputString.equals("help") || userInputString.equals("-h")) {
+                System.out.println(instructionsText);
+            }
+            // Once we have input -> Break it into it's individual parts ( using .split() method of the String instance )
+            String[] arrayOfOpCodeAndNumbersInWords = userInputString.split(" ");
+            // Interactivity task is done.
+            // Hand over to other task.
+            handleUserInputToMathOperation(arrayOfOpCodeAndNumbersInWords);
+        } while (repeatProcess == true);
+        displayFooter();
+    }
+
+    private static void displayFooter() {
+        // this text should come at the end of the program(/ when I Type exit)
+        StringBuilder sbFooter = new StringBuilder();
+        sbFooter.append("\n*********************************************************************************************************************************************")
+                .append("\n*********************************************************************************************************************************************")
+                .append("\n***************************                                                                                     *****************************")
+                .append("\n***************************        Inc. Way                                                                     *****************************")
+                .append("\n***************************                                                                                     *****************************")
+                .append("\n***************************        Inconvenient-Calculator App (Inc. Calc TM) is a product of Inc. Way          *****************************")
+                .append("\n***************************                                                                                     *****************************")
+                .append("\n***************************        The Inc. Way mission:                                                        *****************************")
+                .append("\n***************************        To help the world appreciate the conveniences of life :)                     *****************************")
+                .append("\n***************************                                                                                     *****************************")
+                .append("\n***************************        The Inc. Way slogan:                                                         *****************************")
+                .append("\n***************************        Why do it the convenient way, when you can do it the Inc. Way                *****************************")
+                .append("\n***************************                                                                                     *****************************")
+                .append("\n***************************                                                                                     *****************************")
+                .append("\n***************************                                                                                     *****************************")
+                .append("\n*********************************************************************************************************************************************")
+                .append("\n*********************************************************************************************************************************************");
+        String footerText = sbFooter.toString();
+        System.out.println(footerText);
     }
 
     private static void handleUserInputToMathOperation(String[] arrayOfOpCodeAndNumbersInWords) {
@@ -119,26 +152,11 @@ public class Main {
     }
 
     private static void displayResult(double result) {
-        System.out.println("Output>> Result = " + result + "\n");
-        System.out.println("" +
-                "\n*********************************************************************************************************************************************" +
-                "\n*********************************************************************************************************************************************" +
-                "\n***************************                                                                                     *****************************" +
-                "\n***************************        Inc. Way                                                                     *****************************" +
-                "\n***************************                                                                                     *****************************" +
-                "\n***************************        Inconvenient-Calculator App (Inc. Calc TM) is a product of Inc. Way          *****************************" +
-                "\n***************************                                                                                     *****************************" +
-                "\n***************************        The Inc. Way mission:                                                        *****************************" +
-                "\n***************************        To help the world appreciate the conveniences of life :)                     *****************************" +
-                "\n***************************                                                                                     *****************************" +
-                "\n***************************        The Inc. Way slogan:                                                         *****************************" +
-                "\n***************************        Why do it the convenient way, when you can do it the Inc. Way                *****************************" +
-                "\n***************************                                                                                     *****************************" +
-                "\n***************************                                                                                     *****************************" +
-                "\n***************************                                                                                     *****************************" +
-                "\n*********************************************************************************************************************************************" +
-                "\n*********************************************************************************************************************************************"
-        );
+        StringBuilder sbOutputLine = new StringBuilder(40);
+        sbOutputLine.append("Output>> Result = ").append(result);
+        String outputLineText = sbOutputLine.toString();
+        System.out.println(outputLineText);
+
     }
 
     private static void handleCommandLineArgs(String[] args) {
