@@ -1,9 +1,40 @@
 # Java SE Fundamentals
-```console
+<!-- ```console
 NOTE:
 These notes are the notes that were taken by Ashbie B. Mweemba while he was learning/Re-learning Java from Pluralsight courses.
 Part of these notes came from AI responses to Ashbie's questions/prompts about certain things (concepts/topics etc).
-```
+
+Here’s a more professional version of your note for the Markdown file:
+
+***Note:***
+These notes were taken by Ashbie B. Mweemba during his study and review of Java through Pluralsight courses. Some sections also include insights from ChatGPT in response to specific questions and prompts related to various concepts.
+
+border-left: 5px solid #2196f3;
+
+Change the note to have PluralSight colors
+``` -->
+<head>
+   <style>
+      /* resembleChatGPT's -codeTerminal */
+      .codeTerminal-container {
+         background-color: #e0f3ff; padding: 1em; border-radius: 8px;  padding-top: 72px; position: relative; overflow: auto;
+      }
+      .codeTerminal-header {
+         background-color: #2196f3; padding: 1em; border-radius: inherit; position: absolute; top: 0; right: 0; left: 0; border-bottom-left-radius: 0; border-bottom-right-radius: 0; color: #fff; font-weight: 900; font-size: 16px;
+      }
+   </style>
+</head>
+<div id="note-info" class="codeTerminal-container">
+
+   <div class="codeTerminal-header">
+      Note
+   </div>
+   <p class="codeTerminal-body">
+   These notes were taken by Ashbie B. Mweemba during his study and review of Java through Pluralsight courses. Some sections also include insights from ChatGPT in response to specific questions and prompts related to various concepts.
+   </p>
+
+</div>
+
 # 6. Understanding Methods
 
 The return value of a method:
@@ -508,11 +539,103 @@ String userInput = scanner.nextLine();
 3. Ask for the input by calling the `.nextLine()` method
 *So what that `scanner.nextLine()` will do is it will read all the input from the user until they hit the **Enter** key, and then it will give you that input as a **String**.*
 
+## 7.8 StringBuilder
+[StringBuilder's purporse](#anchor-point---78q-sbs-purpose)
+Let's take a look now at the StringBuilder class. The StringBuilder class provides a mutable string buffer. Remember when we first looked at strings, we mentioned that strings were immutable, and that meant that any modifications we make to a string don't actually change that string, but create an entirely new string. And that was something we had to keep in mind if we had to build up a string piece by piece because doing it that way wouldn't be particularly efficient. So what the StringBuilder class does is give us a way to efficiently construct string values piece by piece. So it has an append method that allows us to add content to the end of the string buffer, and it has an insert method that allows us to insert content within the string buffer. Now it's important to understand that the StringBuilder itself is not a string. Once you build the content that you're interested in, you need to extract the string from the StringBuilder instance. And we do that by using StringBuilder's toString method. 
+![alt text](image-18.png)
+
+So let's take a look at some code.
+![alt text](image-19.png)
+
+So we've got two variables here, a String variable, location, with the value of Florida and an integer variable, flightNumber, with the value 175. Let's say I want to build the string, I flew to, and take whatever the value of location is on Flight # and take the value of our flightNumber variable. So I need to build the string up piece by piece.
 
 
+![alt text](image-20.png)
+So that I can do that efficiently, I'll use a StringBuilder. So we create an instance of our StringBuilder class. So we have our variable, StringBuilder sb = new StringBuilder. Now the StringBuilder class can dynamically resize itself based on the content you're working on. But if you have an idea about how long the StringBuilder content is going to be, you can provide that when you create the StringBuilder instance, and that'll just help it to work a bit more efficiently. Now once we've got our StringBuilder created, the StringBuilder will then have a buffer that it manages, and we can just start providing the content we want to go into that buffer. 
 
+![alt text](image-22.png)
+So I'll start out with sb.append and provide the literal string, I flew to space. So that'll add that string to any content that we already have in our StringBuilder buffer. Now since we just created StringBuilder, there is no content, so that value will go right at the beginning of the buffer. We can then append the value of our location variable, so that appends the word Florida to the end of the buffer. We'll append the string literal, on Flight #. So that goes, again, at the end of the buffer. I can then append our flightNumber variable, and that'll convert that integer into its string representation and add that to the end of the buffer.
+So now once we've built the value that we're interested in, we need to get it out so we can use it as a string. So we have a string variable here, message, and we'll call sb.toString so our message variable will have the value, I flew to Florida on Flight #175. So that allowed us to build up our string piece by piece in an efficient way. And just because we've gotten the string out of the StringBuilder doesn't mean we have to stop using the StringBuilder.
 
+### We can continue Operating
+We can still continue operating on it. So let's say I want to add some time information. With this time information, rather than putting it at the end, I want to put it somewhere in the middle of the existing value. So the first thing I need to do is identify where in that existing buffer I want the value to go. And let's say I want to put the time information where the space on currently exists in the buffer. So by calling sb.indexOf will give me that position within the buffer.
+So once I have my insert position, I can call sb.insert, provide that position and the value that I want to place there. What StringBuilder will then do is move the content down that's already there and then add in that value that I provided. So I've got that string literal there, and now I want to place the time value just after that. So I do another sb.insert, indicating I want to be four characters further down, and then I have that time value. So our StringBuilder will again make room in the buffer and then place the time value right at that position. So once I do that, I can again call sb.toString, assign that to a variable, and now I'll get out the string, I flew to Florida at 9:00 on Flight #175. So as you can see, the StringBuilder gives us an efficient way to build up a string piece by piece. So to help us get a better understanding of all this, we'll jump back into our CalcEngine project, and we'll use the StringBuilder class to improve our application output.
+#### 1.1. Adding `" at "`:: Locate position
+![alt text](image-30.png)
+![alt text](image-36.png)
+#### 1.2. Adding `" at "`:: on the previously located position, insert " at "
+![alt text](image-31.png)
+![alt text](image-33.png)
+![alt text](image-34.png)
 
+#### 2. Adding the `time` variable:: Locate position && insert the time
+- Instead of using two lines of code (one to locate the position && the other to insert the time), we can merge those two steps into one line of code, because:
+   * *We already have a re-useable positon (pointer), even though it's not currently pointing to the position we desire.*
+- So just take that re-usable position (pointer) and use it in the `insert()` method of the StringBuilder instance.
+   * This will be our **one** line of code
+- We can read the one line of code like this: 
+   - ***insert(***
+      *`param1:` at the new position, which we obtained by adding 4 to the previous postion pointer,*
+      *`param2:` the time String*
+   ***)***
+
+![alt text](image-35.png)
+![alt text](image-26.png)
+![alt text](image-27.png)
+![alt text](image-28.png)
+
+#### 3. Final Result
+![alt text](image-29.png)
+
+### 7.8.Q. StringBuilder questions section
+#### 7.8.Q.1. Heap or String Pool
+**Question:**
+*`In which memory section is the object placed in? (Which object am I talking about? I'm talking about the object that is referenced by what is returned when StringBuilder's .toString() method is called?`*
+
+So I know that when we initialize the StringBuilder instance `sb`, it is created on the heap (because of the `new` keyword).
+
+But what I don't know is whether `sb.toString()` returns a reference to an interned String instance (a String object that is in the String Pool) OR `sb.toString()` returns a reference to a non-interned String instance (a String object which is on the Heap).
+
+So, which type of reference does it return?
+
+**Response:**
+The `sb.toString()` method returns a **non-interned String instance**, meaning it creates a new `String` object on the **heap**. 
+
+Here’s why:
+###### Anchor Point - 7.8.Q. SB's purpose
+
+1. **StringBuilder’s Purpose**: `StringBuilder` is designed to efficiently build and modify strings in memory without creating multiple `String` instances. When you call `toString()` on a `StringBuilder`, it converts the accumulated content into a `String` object but does not automatically place that object in the **String Pool**.
+
+2. **No Automatic Interning**: The `toString()` method in `StringBuilder` creates a `String` object on the **heap**, not in the **String Pool**. Interning is a separate step that only happens if you explicitly call the `intern()` method on the resulting string.
+
+3. **Different from Literals**: String literals and `String` constants are automatically placed in the String Pool by Java. However, dynamically created strings (like those built with `StringBuilder`) are not automatically added to the pool.
+
+If you wanted `message` to reference an interned `String`, you would need to call `message = sb.toString().intern();`. Otherwise, it will remain a distinct `String` object on the heap.
+
+#### 7.8.Q.2 Calling .intern() on an already interned String
+**Question:**
+What happens when I call `String.intern()` on a String instance that is already on/in the String Pool?
+
+**Response:**
+When you call `intern()` on a `String` instance that is already in the **String Pool**, it simply returns a reference to that same instance without creating a new object or performing any additional operations. 
+
+Here's the step-by-step explanation of what happens:
+
+1. **Check the String Pool**: The `intern()` method checks if the `String` instance is already in the **String Pool**.
+  
+2. **Already in Pool**: If the instance is already in the pool (which would be the case if the `String` was a literal or previously interned), `intern()` just returns a reference to the same instance.
+
+3. **No New Object Created**: No new `String` object is created, and no additional memory allocation occurs since the string is already in the pool. Interning is simply about ensuring that all references to the same string content point to the single instance in the pool.
+
+### Example
+
+```java
+String s1 = "hello";     // "hello" is a string literal, so it's in the String Pool.
+String s2 = s1.intern();  // s2 now points to the same "hello" instance in the pool.
+System.out.println(s1 == s2); // true, because both s1 and s2 refer to the same instance.
+```
+
+In this example, calling `s1.intern()` on a literal simply returns the existing reference in the pool.
 
 
 
