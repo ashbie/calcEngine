@@ -86,13 +86,13 @@ public class Main {
         .append("\n\t\tOutput>> Result = 18 ")
         .append("\n\n(/) Division Example: ")
         .append("\n\t\tInput>> divide six two")
-        .append("\n\t\tOutput>> Result = 3 ");
+        .append("\n\t\tOutput>> Result = 3 \n");
         String instructionsText = sbInstructions.toString();
 
         //        StringBuilder sbInputText = new StringBuilder();
         //        sbInputText.append("\n\n::::::::::::::::::::      Input & Output area");
 
-        boolean repeatProcess = true;
+        //        boolean repeatProcess = true;
         System.out.println(headerText);
         do {
             System.out.print("Input>> ");
@@ -100,20 +100,21 @@ public class Main {
             Scanner scanner = new Scanner(System.in);
             String userInputString = scanner.nextLine(); // We have the input <--here
             // Quit app
-            if(userInputString.equals("exit") || userInputString.equals("stop") || userInputString.equals("end") || userInputString.equals("quit") || userInputString.equals("q")) {
-                repeatProcess = false;
-                continue;  // <--- will break;(instead of continue;) work too ?
+            if(userInputString.equalsIgnoreCase("exit") || userInputString.equalsIgnoreCase("stop") || userInputString.equalsIgnoreCase("end") || userInputString.equalsIgnoreCase("quit") || userInputString.equals("q")) {
+                //                repeatProcess = false;
+                break;  // <--- will break;(instead of continue;) work too ?
             }
             // display help (instructions)
-            if(userInputString.equals("help") || userInputString.equals("-h")) {
+            if(userInputString.equalsIgnoreCase("help") || userInputString.equals("-h")) {
                 System.out.println(instructionsText);
+                continue;
             }
             // Once we have input -> Break it into it's individual parts ( using .split() method of the String instance )
             String[] arrayOfOpCodeAndNumbersInWords = userInputString.split(" ");
             // Interactivity task is done.
             // Hand over to other task.
             handleUserInputToMathOperation(arrayOfOpCodeAndNumbersInWords);
-        } while (repeatProcess == true);
+        } while (true);  //    repeatProcess == true
         displayFooter();
     }
 
@@ -147,16 +148,47 @@ public class Main {
         double rightNumber = numberFromWord(arrayOfOpCodeAndNumbersInWords[2]);
 
         double result = executeMathOperation(opCode, leftNumber, rightNumber);
-        displayResult(result);
+        //displayResult(result);
+        displayResultAndOperation(leftNumber, opCode, rightNumber, result);
 
+    }
+
+    private static char symbolFromOpCode(char opCode) {
+        char []opCodes = {'a', 's', 'm', 'd'};
+        char []symbols = {'+', '-', '*', '/'};
+        char aSymbol = '?';
+
+        for(int i=0; i < opCodes.length; i++) {
+            if(opCodes[i] == opCode) {
+                aSymbol = symbols[i];
+                break;
+            }
+        }
+
+        return aSymbol;
     }
 
     private static void displayResult(double result) {
         StringBuilder sbOutputLine = new StringBuilder(40);
         sbOutputLine.append("Output>> Result = ").append(result);
         String outputLineText = sbOutputLine.toString();
-        System.out.println(outputLineText);
 
+        System.out.println(outputLineText);
+    }
+
+    private static void displayResultAndOperation(double leftNumber, char opCode, double rightNumber, double result) {
+        char theSymbol = symbolFromOpCode(opCode);
+        StringBuilder sb = new StringBuilder(25);
+        sb.append("Output>> ").append(leftNumber)
+                .append(" ")
+                .append(theSymbol)
+                .append(" ")
+                .append(rightNumber)
+                .append(" = ")
+                .append(result);
+        String resultPlusInfo = sb.toString();
+
+        System.out.println(resultPlusInfo);
     }
 
     private static void handleCommandLineArgs(String[] args) {

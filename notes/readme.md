@@ -99,7 +99,7 @@ s1.equals(s2) results to true
 When we say `s3 = s1.intern();`
 What the intern method does is:
 - `1 ` it looks at the value of the string 
-- `2 ` it looks around to see if there is already an intern version of that string
+- `2 ` it looks around to see if there is already an interned version of that string
 - `3 ` if it can't find one, it provides that intern version:
 So then s3 is set to reference the intern version of the string.
 
@@ -543,6 +543,10 @@ String userInput = scanner.nextLine();
 3. Ask for the input by calling the `.nextLine()` method
 *So what that `scanner.nextLine()` will do is it will read all the input from the user until they hit the **Enter** key, and then it will give you that input as a **String**.*
 
+**Question:**
+What does the *house keeping* of `System.in` actually look like?
+`I should write a simple program where I directly use System.in; I should not use java.util.Scanner; `
+
 ## 7.8 StringBuilder
 [StringBuilder's purporse](#anchor-point---78q-sbs-purpose)
 
@@ -589,6 +593,9 @@ So once I have my insert position, I can call sb.insert, provide that position a
       *`param2:what` the time String*
 
    ***)***
+
+**Note:**
+What is returned by `indexOf()` is **not** a pointer. It returns an `int` which we use a an index(like an array index). I was saying pointer because of the arrow in the images which was helping me visualise the whole process. So, it's not a pointer but an int (used as an index in the StringBuilder buffer)
 
 ![alt text](image-35.png)
 ![alt text](image-26.png)
@@ -795,6 +802,10 @@ Yes, you're correct—when your code involves multiple concatenations with varia
 
 So, in your case, refining your code to use `StringBuilder` in areas with variable concatenations would indeed align with best practices. It will help reduce the number of intermediate `String` objects created, making your code more efficient, especially in scenarios where the concatenation operations are repeated.
 
+## 7.9. Summary: Working with Strings
+![alt text](image-38.png)
+![alt text](image-39.png)
+![alt text](image-37.png)
 
 
 
@@ -1154,3 +1165,52 @@ String message = "Hello, world!";
    ```
 
 In short, **constant folding** is a powerful optimization that reduces the work done at runtime by performing constant calculations and concatenations at compile-time, wherever possible.
+
+## Streaming API Requests and Responses
+When someone says **"This API allows streaming of Requests and Responses"**, they mean the API supports the continuous transmission of data between the client and server, enabling partial or incremental data to be sent or received without waiting for the entire dataset to be ready. Here's a breakdown of what this implies:
+
+### Streaming Requests
+- **Client Sends Data Gradually**: Instead of sending a complete request payload in one go, the client can send chunks of data over time. This is particularly useful for large files, real-time data inputs, or scenarios where data is generated progressively.
+- **Example Use Case**: Uploading a large video file, where the client sends the video in smaller parts (chunks) instead of uploading the entire file in one request.
+
+### Streaming Responses
+- **Server Sends Data Gradually**: Instead of waiting to process and send the entire response at once, the server can send parts of the response to the client as soon as they are ready. This is helpful for large datasets or real-time applications.
+- **Example Use Case**: A server delivering a live video feed or a long computation result in chunks as they are computed.
+
+### How It's Implemented
+- **Protocols**: Streaming often leverages protocols like HTTP/1.1 with chunked transfer encoding, HTTP/2, WebSockets, or gRPC for efficient streaming.
+- **Data Flow**: APIs that allow streaming often use techniques like:
+  - **Readable Streams** (server-side or client-side) for consuming incoming chunks of data.
+  - **Writable Streams** for sending data incrementally.
+
+### Benefits
+1. **Efficiency**: Reduces memory usage since data is processed and transmitted in smaller chunks instead of being buffered entirely in memory.
+2. **Latency Reduction**: Allows the client or server to start processing data earlier without waiting for the entire transmission to complete.
+3. **Scalability**: Handles large datasets or real-time communication more effectively.
+
+### Example
+#### Request Streaming (Client to Server):
+```http
+POST /upload HTTP/1.1
+Transfer-Encoding: chunked
+
+7
+data123
+4
+more
+0
+```
+
+#### Response Streaming (Server to Client):
+```http
+HTTP/1.1 200 OK
+Transfer-Encoding: chunked
+
+5
+hello
+5
+world
+0
+```
+
+In the above examples, data is sent in chunks, enabling streaming behavior. This concept is widely used in APIs designed for real-time applications or dealing with large data sets.
