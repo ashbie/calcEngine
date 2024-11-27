@@ -1,8 +1,10 @@
 # ALGORITHMS
-Notes from the book **Introduction to Algorithms**!SECTION
+Notes from the book **Introduction to Algorithms**
 
 #### AnchorPoint -> Some Exercise Solutions
-Some Solutions to exercises: [selected-solutions.pdf](selected-solutions.pdf) OR <a href="selected-solutions.pdf" target="blank"> click-here (if previous link is not working)</a>
+Some Solutions to exercises:
+
+[selected-solutions.pdf](selected-solutions.pdf) OR <a href="selected-solutions.pdf" target="blank"> click-here (if previous link is not working)</a>
 
 #### Prerequisites
 - mathematical proofs (esp. proofs by Mathematical Induction)
@@ -17,8 +19,6 @@ Maybe check later:
 
 ## Part IV: Advanced Design and Analysis Techniques
 ### Dynamic Programming  (aka Dynamic Tabular Method) :Page 362 
----------------------------------------------------------------------------------------------------------------
- 
 
 This method/algorithm works just like the 'Divide & Conquer' method by combining subproblem solutions in order to solve a problem. 
 
