@@ -215,3 +215,25 @@ So the computer adds 3 padding bytes to make this happen:
 I should note that this is not a language feature. Padding is implemented by the compiler, and just because it works like this on my computer, that doesn't mean that yours will do the same. The point of this little digression was to show you how this virtual pointer: 
 ![alt text](image-100.png)
 can possibly increase the size of your objects, in this case, significantly. So don't use virtual functions just because the cool kids are doing it; approach them wisely.
+
+### 5.3.Q.1. What is Late Binding
+C++ implements **late binding** to support the existence of **virtual functions**. 
+So does **late binding** occur at runtime THEN **early binding** at compile time?
+
+Response:
+To answer your question based on the diagram and your description:
+
+**Late binding** (or dynamic dispatch) occurs **at runtime**, which is the process of resolving the correct function to call through the virtual table (vtable). 
+
+In the case of **virtual functions**, the compiler performs the following actions during **compile time** (early binding phase):
+1. **Sets up the vtable structure**: The compiler generates a vtable for each class that has virtual functions. This vtable maps function pointers to the correct implementation based on the class hierarchy.
+2. **Associates the vtable with objects**: Each polymorphic object (an object of a class with virtual functions) contains a hidden pointer (`vptr`) that points to the vtable of the actual type of the object.
+3. **Emits code for indirect calls**: For calls to virtual functions, the compiler generates code that accesses the `vptr` to locate the correct function pointer in the vtable.
+
+At **runtime**, the **late binding** occurs when:
+- The program accesses the vtable via the `vptr` and invokes the appropriate function pointer stored in the table. This allows the correct overridden function to be called based on the actual type of the object, even if the call is made through a base class pointer.
+
+In summary:
+- **Early binding** at compile time: The vtable is set up, and the `vptr` logic is incorporated into the program.
+- **Late binding** at runtime: The function call is resolved dynamically via the vtable, allowing polymorphism to work.
+
