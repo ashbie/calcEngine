@@ -1,4 +1,6 @@
 # WORKING WITH POINTERS AND ARRAYS IN C++ 20
+
+# 5. Pointing to Class Members
 Module 5:
 ![alt text](image-40.png)
 ## 5.1. Accessing Class Members with the Arrow Operator
@@ -237,3 +239,29 @@ In summary:
 - **Early binding** at compile time: The vtable is set up, and the `vptr` logic is incorporated into the program.
 - **Late binding** at runtime: The function call is resolved dynamically via the vtable, allowing polymorphism to work.
 
+
+
+## 5.4. Revisiting RAII
+```c++
+#include <iostream>
+
+class DNA {
+    public:
+        // 60'000'000 bytes = 60 megabytes
+        char code[60'000'000];
+};
+
+// version of main() that won't work
+int main() {
+    DNA sample;
+    return 0;
+    
+    // won't be able to instantiate sample on the stack
+    // coz 60MB can't fit in the stack
+}
+
+int main() {
+
+}
+
+```
