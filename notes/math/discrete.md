@@ -236,32 +236,32 @@ Does this explanation make sense now? 😊
 
 
 ## Side Quests
-#### Continuum Math
+### Continuum Math
 Many areas of Mathematics, such as algebra or calculus, focus on `Continuums`. These are mathematical objects that take values over continuous ranges, such as the set of numbers *x* between 0 and 1, or mathematical functions plotted as smooth curves.
 These objects come with their own class of mathematical methods, but are mostly distinct from the methods for discrete problems.
 
-#### Number Theory
+### Number Theory
 The study of counting numbers (Numbers that are used to count stuff)
 
-#### Cryptography
+### Cryptography
 The art and science of converting data and information into encoded forms that can be ideally **ONLY** be decoded by authorized entities.
 
 This field makes heavy use of:
 - Number theory
 - Algorithms on base-n number systems 
 
-#### Graph Theory
+### Graph Theory
 - used in Logistics
 - airlines use it too
 
-#### Set Theory
+### Set Theory
 A relational database makes use of the concept of set theory in order to group together relevant information.
 - Chapter 8: Storage and Feature Extraction of Trees, Graphs, and Networks.
 
-#### Machine Learning
+### Machine Learning
 This is the area that seeks to automate statistical and analytical methods so systems can find useful patterns in data, learn, and make decisions with minimal human intervention.
 
-#### Analysis of Algorithms
+### Analysis of Algorithms
 **Algorithm**: *Any set of instructions to accomplish a task*
 
 An effective algorithm must:
@@ -272,7 +272,71 @@ An effective algorithm must:
 To ensure the 2nd condition: `terminate in a useful amount of time`, it is often necessary to:
 - `count the number of operations` an algorithm must complete in order to terminate
 
-which can be complex, but can be done through `methods of combinatorics`
+which can be complex, but can be done through `methods of combinatorics`.
+
+e.g.:
+To analyze the running time of the inefficient `CUT-ROD(p, n)` we had to count the number of operations, T(n), that **CUT-ROD** had complete in order to terminate.
+
+```pseudo
+CUT-ROD(p, n) {
+  if (n == 0) { 
+    return 0; 
+  }
+
+  p = neg.infinity
+
+  for i = 1 to n
+  {
+    p = max{ p, p[i] + CUT-ROD(p, n-i) }
+  }
+
+  return p;
+}
+```
+
+- Let T(n) denote the total number of calls made to *CUT-ROD(p, n)* for a particular value *n*. 
+- This expression equals the number of nodes in a *subtree* whose root is labeled *n* in the *recursion tree*.
+
+The count includes: 
+- the initial call at the root, plus
+- all the recursive calls made due to *CUT-ROD(p, n-i)*
+
+How to count:
+- initial call = 1
+- T(0) = 1
+- T(n) = 1 + the sum of { T(j) | 0 <= j <= n-1 }
+
+In T(n):
+- the 1 is for the initial call at the root.
+- then T(j) is for the total number of recursive calls.
+It counts the number of calls due to the call *CUT-ROD(p, n-i)*, where *j = n - i*.
+
+---
+I'm learning :
+ ### Analysis of Algorithms
+and 
+### Algorithms
+from some books. Some of the things I've learnt are:
+An **Algorithm** is *Any set of instructions to accomplish a task*.
+
+An effective algorithm must:
+1. solve the problem
+2. terminate in a useful amount of time (i.e.: not take too much time to terminate)
+3. not take up too much space
+
+To ensure the 2nd condition: `terminate in a useful amount of time`, it is often necessary to:
+- `count the number of operations` an algorithm must complete in order to terminate.
+
+The counting can be complex, but can be done through `methods of combinatorics`.
+
+So at a certain point in the book, the book then comes up with an algorithm to solve a certain problem and then says that the algorithm is inefficient. It doesn't show how it counted the operations to show that the algorithm is inefficient (I want to know how to count), but is says this (Let me show you the problem and the algorithm) (P.S. don't give me an efficient version of the algorithm. I want to learn it from the book. Just show me how the book came up with the Time Analysis part):
+
+
+
+--------
+
+
+
 
 The 3rd condition requires a similar counting of memory usage.
 
