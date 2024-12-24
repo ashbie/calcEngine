@@ -206,9 +206,9 @@ The integers \(\mathbb{Z} = \{\dots, -3, -2, -1, 0, 1, 2, 3, \dots\}\) are also 
      - \(2 \to 4\), \(-2 \to 5\)
      - \(3 \to 6\), \(-3 \to 7\), and so on.
 2. The sequence looks like this:
-   \[
+   $$
    0, 1, -1, 2, -2, 3, -3, \dots
-   \]
+   $$
 3. Every integer is assigned to exactly one natural number, and every natural number is assigned to exactly one integer.
 
 Thus, the integers are also **countable**.
@@ -404,29 +404,29 @@ If you code up CUT-ROD in your favorite programming language and run it on your 
 Why is CUT-ROD so inefficient? The problem is that CUT-ROD calls itself re-cursively over and over again with the same parameter values, which means that it solves the same subproblems repeatedly. Figure 14.3 shows a recursion tree demonstrating what happens for \(n D 4\) : `CUT-ROD(p, n)` calls `CUT-ROD(p, n-i)` for \(i = 1, 2, ..., n \) . Equivalently, `CUT-ROD(p, n)` calls `CUT-ROD(p, j)` for each \(j = 0, 1, ..., n-1 \) . When this process unfolds recursively, the amount of work done, as a function of \(n\) , grows explosively. 
 
 To analyze the running time of CUT-ROD, let \(T(n)\) denote the total number of calls made to `CUT-ROD(p, n)` for a particular value of \(n\) . This expression equals the number of nodes in a subtree whose root is labeled \(n\) in the recursion tree. The count includes the initial call at its root. Thus, \(T.0/ D 1\) and 
-\[
+$$
 T(n) =  1 + \sum_{j=0}^{n-1}  T(j)
-\]
+$$
 
 The initial \(1\) is for the call at the root, and the term \(T(j) \) counts the number of calls (including recursive calls) due to the call `CUT-ROD(p, n)` , where \(j = 0, 1, ..., n-1 \) . 
 
 Show that 
-\[
+$$
 T(n) = 2^n 
-\]
+$$
 
 , and so the running time of CUT-ROD is exponential in \(n\) . 
 
 #### My other issue (or maybe it's the same issue)
 How did the book go from this:
-\[
+$$
 T(n) =  1 + \sum_{j=0}^{n-1}  T(j)
-\] 
+$$ 
 
 to this:
-\[
+$$
 T(n) = 2^n
-\]
+$$
 
 ?
 
@@ -436,13 +436,13 @@ And how can I show that  \(T(n) = 2^n\)  so that I can conclude that the running
 --------
 
 Great question! Let’s carefully walk through how the recurrence relation  
-\[
+$$
 T(n) = 1 + \sum_{j=0}^{n-1} T(j)
-\]  
+$$  
 leads to the solution  
-\[
+$$
 T(n) = 2^n.
-\]  
+$$  
 
 ### Step 1: Understand the Recurrence Relation  
 
@@ -465,9 +465,9 @@ Let’s try to compute a few small values manually:
 - \(T(4) = 1 + T(0) + T(1) + T(2) + T(3) = 1 + 1 + 2 + 4 + 8 = 16\)
 
 You might notice a pattern:
-\[
+$$
 T(n) = 2^n
-\]
+$$
 
 This pattern suggests that each increase in \(n\) doubles the number of calls.
 
@@ -476,67 +476,67 @@ This pattern suggests that each increase in \(n\) doubles the number of calls.
 ### Step 3: Prove by Induction  
 
 We can prove by mathematical induction that:
-\[
+$$
 T(n) = 2^n
-\]
+$$
 
 #### **Base Case:** \(n = 0\)  
 From the recurrence:
-\[
+$$
 T(0) = 1 = 2^0
-\]  
+$$  
 The base case holds.
 
 #### **Inductive Hypothesis:**  
 Assume that the formula holds for all values up to some \(k \geq 0\):
-\[
+$$
 T(k) = 2^k
-\]
+$$
 
 #### **Inductive Step:** Show it holds for \(k + 1\)  
 From the recurrence:
-\[
+$$
 T(k+1) = 1 + \sum_{j=0}^{k} T(j)
-\]
+$$
 
 Using the inductive hypothesis:
-\[
+$$
 T(j) = 2^j
-\]
+$$
 
 Substituting into the sum:
-\[
+$$
 T(k+1) = 1 + \sum_{j=0}^{k} 2^j
-\]
+$$
 
 The summation of powers of 2 is a geometric series:
-\[
+$$
 \sum_{j=0}^{k} 2^j = 2^{k+1} - 1
-\]
+$$
 
 Substituting this into the equation:
-\[
+$$
 T(k+1) = 1 + (2^{k+1} - 1)
-\]
+$$
 
 Simplify:
-\[
+$$
 T(k+1) = 2^{k+1}
-\]
+$$
 
 The induction step holds, so by the principle of mathematical induction:
-\[
+$$
 T(n) = 2^n
-\]
+$$
 
 ---
 
 ### Step 4: Conclusion
 
 We’ve shown that:
-\[
+$$
 T(n) = 2^n
-\]
+$$
 
 This means the `CUT-ROD` algorithm has an **exponential time complexity** in terms of the input size \(n\). As \(n\) increases, the number of calls grows extremely fast, explaining why the algorithm becomes impractically slow for larger values of \(n\).
 
@@ -555,9 +555,9 @@ Let’s try to compute a few small values manually:
 - \(T(4) = 1 + T(0) + T(1) + T(2) + T(3) = 1 + 1 + 2 + 4 + 8 = 16\)
 
 You might notice a pattern:
-\[
+$$
 T(n) = 2^n
-\]
+$$
 
 "
 Is there a mathematical way to come up with the equation \(2^n\) from this pattern: \(1, 2, 4, 8, 16, ...\) ?
@@ -572,9 +572,9 @@ Yes! Recognizing patterns in sequences and translating them into mathematical fo
 
 The sequence given is:
 
-\[
+$$
 1, 2, 4, 8, 16, \dots
-\]
+$$
 
 - The first term (\(T(0)\)) is \(1\).  
 - The second term (\(T(1)\)) is \(2\).  
@@ -585,9 +585,9 @@ The sequence given is:
 
 Mathematically, this can be expressed as:  
 
-\[
+$$
 T(n) = 2 \cdot T(n-1)
-\]
+$$
 
 ---
 
@@ -602,18 +602,18 @@ From the pattern above:
 
 If you expand the terms step-by-step:
 
-\[
+$$
 T(1) = 2 \cdot 1 = 2
-\]  
-\[
+$$  
+$$
 T(2) = 2 \cdot 2 = 4
-\]  
-\[
+$$  
+$$
 T(3) = 2 \cdot 4 = 8
-\]  
-\[
+$$  
+$$
 T(4) = 2 \cdot 8 = 16
-\]  
+$$  
 
 It looks like the general formula follows a geometric progression.
 
@@ -623,9 +623,9 @@ It looks like the general formula follows a geometric progression.
 
 The general formula for a geometric progression is:
 
-\[
+$$
 T(n) = T(0) \cdot r^n
-\]
+$$
 
 Where:
 - \(T(0)\) is the initial value (\(1\) in this case)  
@@ -633,15 +633,15 @@ Where:
 
 Substituting these values:
 
-\[
+$$
 T(n) = 1 \cdot 2^n
-\]
+$$
 
 Simplifying:
 
-\[
+$$
 T(n) = 2^n
-\]
+$$
 
 ---
 
@@ -654,9 +654,9 @@ The mathematical reasoning relies on:
 
 So yes, the sequence \(1, 2, 4, 8, 16, \dots\) indeed corresponds to:
 
-\[
+$$
 T(n) = 2^n
-\]
+$$
 
 This approach can be applied to other sequences as well. Over time, recognizing patterns will become more intuitive! 😊
 
@@ -691,9 +691,9 @@ $$
 $$
 ```
 **Renders as:**  
-\[
+$$
 \sum_{i=1}^{n} i = \frac{n(n+1)}{2}
-\]
+$$
 
 ---
 
@@ -716,9 +716,9 @@ f(x) = \int_{a}^{b} \frac{1}{\sqrt{x^2 + 1}} dx
 $$
 ```
 **Renders as:**  
-\[
+$$
 f(x) = \int_{a}^{b} \frac{1}{\sqrt{x^2 + 1}} dx
-\]
+$$
 
 
 
@@ -753,9 +753,9 @@ $$
 ```
 
 **Renders as:**  
-\[
+$$
 x \leq y \quad \text{and} \quad y \geq z
-\]
+$$
 
 If you need more symbols or advanced formatting, feel free to ask! 😊
 
