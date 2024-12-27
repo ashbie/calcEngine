@@ -85,3 +85,104 @@ Aproximation Algorithms
 35.5 - The subset-sum problem       : page 1124 
 
 ------------------------------
+
+
+```cpp
+EXTENDED_BOTTOM_UP_CUT_ROD(p, n) {
+    let r[0: n] and s[1: n] be new arrays;
+    r[0] = 0;
+
+    for(int J = 1 to n) {
+        q = NEGATIVE_INFINITY;
+
+        for(int i = 1 to J) {
+            if(q < p[i] + r[J - i]) {
+                q = p[i] + r[J - i];
+                s[J] = i;
+            }
+        }
+
+        r[J] = q;
+    }
+
+    return r and s;
+}
+PRINT_CUT_ROD(p, n) {
+    (r, s) = EXTENDED_BOTTOM_UP_CUT_ROD(p, n);
+
+    cout << "Rod Length: " << n << ", Maximum price possible : " << r[n] << '\n';
+
+    while (n > 0) {
+        cout << "Rod Length: " << n << ", Cut at : " << s[n] << '\n';
+        n -= s[n];
+    }
+}
+```
+
+```cpp
+MEMOIZED_CUT_ROD(p, n) {
+    let r[0: n] be a new array;
+
+    for(i = 0 to n) {
+        r[i] = NEGATIVE_INFINITY;
+    }
+
+    return MEMOIZED_CUT_ROD_AUX(p, n, r);
+}
+
+MEMOIZED_CUT_ROD_AUX(p, n, r) {
+    // initialise q somewhere here
+    if(r[n] >= 0) { return r[n] }
+    if(n == 0) { q = 0; } // { r[n] = 0; return r[n] } || { r[n] = 0; return 0 }
+    else {
+        q = NEGATIVE_INFINITY;
+
+        for(i = 1 to n) {
+            q = max{ q, p[i] + MEMOIZED_CUT_ROD_AUX(p, n-i, r) };
+        }
+    }
+
+    r[n] = q;
+    return q; // return r[n]
+    
+}
+```
+
+```cpp
+BOTTOM_UP_CUT_ROD(p, n) {
+    // initialise q here   : I'm starting to think that it doesn't matter
+    // where I initialise q from
+    let r[0: n] be a new array;
+    r[0] = 0;
+
+    for(int J = 1 to n) {
+        q = NEGATIVE_INFINITY;
+
+        for(int i = 1 to J) {           
+            q = max(q, p[i] + r[J - i] );            
+        }
+
+        r[J] = q;
+    }
+
+    return r[n];
+}
+
+```
+
+```cpp
+CUT_ROD(p, n) {
+    if(n == 0) {
+        return 0;
+    }
+
+    q = NEGATIVE_INFINITY;
+
+    for(i = 1 to n) {
+        q = max{ q, p[i] + CUT_ROD(p, n-i) };
+    }
+
+    return q;
+}
+
+```
