@@ -88,6 +88,8 @@ Aproximation Algorithms
 
 
 ```cpp
+#include <iostream>
+
 EXTENDED_BOTTOM_UP_CUT_ROD(p, n) {
     let r[0: n] and s[1: n] be new arrays;
     r[0] = 0;
@@ -107,16 +109,19 @@ EXTENDED_BOTTOM_UP_CUT_ROD(p, n) {
 
     return r and s;
 }
+
+
 PRINT_CUT_ROD(p, n) {
     (r, s) = EXTENDED_BOTTOM_UP_CUT_ROD(p, n);
 
-    cout << "Rod Length: " << n << ", Maximum price possible : " << r[n] << '\n';
+    std::cout << "Rod Length: " << n << ", Maximum price possible : " << r[n] << '\n';
 
     while (n > 0) {
-        cout << "Rod Length: " << n << ", Cut at : " << s[n] << '\n';
+        std::cout << "Rod Length: " << n << ", Cut at : " << s[n] << '\n';
         n -= s[n];
     }
 }
+
 ```
 
 ```cpp
