@@ -249,22 +249,92 @@ class DNA {
     public:
         // 60'000'000 bytes = 60 megabytes
         char code[60'000'000];
+
+        DNA(const char *str) {
+            for(int i = 0; i < 4; i++) {
+                code[i] = str[i];
+            } 
+        }
+
+        void printGeneticCode() {
+            for(int i = 0; i < 4; i++) {
+                std::cout << code[i];
+            }
+            std::cout << std::endl;
+        }
 };
 
-// version of main() that won't work
+//instead of having DNA in Subject, like this:
+// class Subject {
+//     public:
+//         int subject_id;
+//         DNA sample;
+// };
+
+class Subject {
+    public:
+        int subject_id;
+        DNA *sample;
+
+        Subject(): subject_id(0), sample(new DNA("0000")) {}
+        // NOT like this:
+        //Subject(int si, const char *str): subject_id(si), DNA(str) {}
+
+        // I want to pass this string literal pointer to the DNA object, but the object doesn't exist yet, we only have an empty sample pointer.
+        // So inside of this constructor, we actually need to allocate space on the heap for this DNA object and store its location inside of the sample pointer.
+
+        Subject(int si, const char *str): subject_id(si), sample(new DNA(str)) {}
+
+        //  this is where we need to start thinking about all of the side effects from using pointers as data members. Since we allocated this DNA resource inside of the constructor, we need to deallocate it inside of the destructor. 
+
+        ~Subject() { 
+            delete sample;
+        }
+
+        void printSubjectData() {
+            std::cout << "ID  : " << subject_id << std::endl;
+            std::cout << "DNA : ";
+            sample->printGeneticCode();
+            std::cout << std::endl;
+        }
+};
+
+// version of main() that WON'T work
+// int main() {
+//     DNA sample;
+
+//     return 0;
+//     // program won't be able to instantiate sample on the stack
+//     // coz 60MB can't fit in the stack
+// }
+
+// version of main() that WILL work
 int main() {
-    DNA sample;
+    DNA *sample = new DNA("CGTA");
+    sample->printGeneticCode();
     return 0;
-    
-    // won't be able to instantiate sample on the stack
-    // coz 60MB can't fit in the stack
-}
 
-int main() {
-
+    Subject sheep(3, "CGTA");
+    sheep.printSubjectData();
 }
 
 ```
+
+#### Version of main() that WON'T work
+![alt text](image-101.png)
+
+#### Version of main() that WILL work
+We learned in one of the previous lessons that we can pass the string literal to a function by using the constant pointer to a char value. It has to be constant because the string literal is in a read only part of memory.
+
+Q. But `str` is a character pointer, so why is he using the square-bracket notation to access the elements?
+R. ???
+
+---
+
+## 5.5. Implementing Copy Semantics
+
+
+---
 
 # Kate Gregory stuff
 ### Why Does **Uniform Initialization** Exist in C++?
