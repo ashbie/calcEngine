@@ -337,6 +337,13 @@ R. ???
 ---
 
 # Kate Gregory stuff
+## C++ notes
+### Standardization
+- C++ is defined by a standard
+- The Standards Committee updates it
+
+
+## Uniform Initialization
 ### Why Does **Uniform Initialization** Exist in C++?
 
 **Uniform initialization** was introduced in **C++11** to address several inconsistencies and limitations in how objects were traditionally initialized in C++. Previously, C++ had multiple syntaxes for initialization (`()` for constructors, `{}` for aggregates, `=` for assignments), which often led to confusion, ambiguity, and unexpected behavior. 
