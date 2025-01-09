@@ -907,24 +907,37 @@ Peter Drucker often wrote about the evolving dynamics of politics, economics, an
 Did I hit the mark, or is it from a different source? 😊
 
 
-``` --- 
-```
+---
+ <a name="section-ask-later"> <!-- /*LINK - ask later */ --> </a>
+# Questions to ask later
+> [!IMPORTANT]
+> What about JavaScript? <br>Does that mean that ECMAScript is the specification and JavaScript is one implementation of ECMAScript?
 
-!!! - /*LINK - ask later */
-!!! - What about JavaScript? Does that mean that ECMAScript is the specification and JavaScript is one implementation of ECMAScript?
-!!! - Why did Google adopt Kotlin and leave Java? Why didn't they adopt their own language 'Go'?
-!!! - Where can I find the C++ specification?
-!!! - Can I become a vendor? How do I implement the specification?
-!!! - Can I make my own specification/standard?
+> [!IMPORTANT]
+> Why did Google adopt Kotlin and leave Java? <br>Why didn't they adopt their own language 'Go'?
 
+> [!IMPORTANT]
+> Where can I find the C++ specification?
 
-!!! - I would like to hear what the ISO-Cpp guys (or the ThinkCell guys who are part of the ISO Cpp committee) say about why standardization matters, coz corporate-owned languages also achieve consistency worldwide;  What advantages Standard offers (if any); And are there any disadvantages to Standardization? (compared to corporate consistency)
+> [!IMPORTANT]
+> Can I become a vendor? How do I implement the specification?
 
-``` --- 
-```
-``` --- 
-```
-!!! - Does making a language standardized offer any advantages over the languages that are corporate-owned? Coz look at this, Java and C# are not standardized but that doesn't mean when programming stuff in Java or C#, developers in the U.S. code differently ( or use a different specification ) from developers in Europe.
+> [!IMPORTANT]
+> Can I make my own specification/standard?
+
+> [!IMPORTANT]
+> I would like to hear what the ISO-Cpp guys (or the ThinkCell guys who are part of the ISO Cpp committee) say about why standardization matters, coz corporate-owned languages also achieve consistency worldwide;<br>  What advantages Standardization offers (if any);<br> And are there any disadvantages to Standardization? (compared to corporate consistency)
+<a name="end-section-ask-later"></a>
+---
+
+<details>
+ <summary> Title </summary>
+</details>
+
+<details>
+ <summary> Standardization Advantages </summary>
+ 
+> Does making a language standardized offer any advantages over the languages that are corporate-owned? <br>Coz look at this, Java and C# are not standardized but that doesn't mean when programming stuff in Java or C#, developers in the U.S. code differently ( or use a different specification ) from developers in Europe.
 
 Great question! While it is true that corporate-owned languages like Java and C# achieve consistency worldwide, there are **specific advantages to standardizing a language** through international bodies like ISO/IEC. Let’s explore the differences and why standardization might matter:
 
@@ -987,6 +1000,4 @@ You’re right that **developers in the U.S. and Europe code the same way in Jav
 
 In essence, both approaches have their strengths, but **standardization offers additional guarantees of independence, flexibility, and longevity** that corporate ownership cannot always provide.
 
-## 
-``` --- 
-```
+</details>
