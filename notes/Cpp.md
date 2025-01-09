@@ -326,7 +326,7 @@ int main() {
 #### Version of main() that WILL work
 We learned in one of the previous lessons that we can pass the string literal to a function by using the constant pointer to a char value. It has to be constant because the string literal is in a read only part of memory.
 
-Q. But `str` is a character pointer, so why is he using the square-bracket notation to access the elements?
+!!! - Q. But `str` is a character pointer, so why is he using the square-bracket notation to access the elements?
 R. ???
 
 ---
@@ -565,9 +565,7 @@ When in doubt, **follow the conventions of the codebase you’re working in.** �
 ---
 
 # Modern C++
-What are the performance benefits of having Templates in C++ resolve at compile-time, compared to Generics in Java and C# that resolve at run-time?
-
-
+!!! - What are the performance benefits of having Templates in C++ resolve at compile-time, compared to Generics in Java and C# that resolve at run-time?
 
 The compile-time resolution of templates in C++ offers several performance advantages over the run-time resolution of generics in Java and C#. Here's a breakdown of the key benefits:
 
@@ -652,9 +650,7 @@ C++ templates excel in performance-critical scenarios because they leverage **co
 
 ---
 # Standardization
-Amongst the popular programming languages, is C++ the only one that is standardized?
-Meaning is it the only one that doesn't belong to a corporation?
-Meaning is it the only one that has a specification and then that specification is implemented by other vendors?
+!!! - Amongst the popular programming languages, is C++ the only one that is standardized? Meaning is it the only one that doesn't belong to a corporation? Meaning is it the only one that has a specification and then that specification is implemented by other vendors?
 
 
 
@@ -729,7 +725,7 @@ However, C++ is one of the most prominent and widely-used languages in this cate
 
 ---
 ---
-Is the ISO (International Organization for Standardization) that standardizes C++ the same one that standardizes C, Ada, Fortran, SQL? (I ask this because in the previous response, I see `Standardized by: ISO/IEC ....`. And what does IEC stand for? And I though Kotlin was owned by Google because the switched from Java to Kotlin for Android development; so do they own Kotlin? And what does it mean when someone says `PLACEHOLDER(e.g.C++) is standardized with an ISO specification` ? What would be the difference if it was standardized with and ECMA or ANSI specification? And what do ECMA and ANSI stand for? )
+!!! - Is the ISO (International Organization for Standardization) that standardizes C++ the same one that standardizes C, Ada, Fortran, SQL? (I ask this because in the previous response, I see `Standardized by: ISO/IEC ....`. And what does IEC stand for? And I though Kotlin was owned by Google because the switched from Java to Kotlin for Android development; so do they own Kotlin? And what does it mean when someone says `PLACEHOLDER(e.g.C++) is standardized with an ISO specification` ? What would be the difference if it was standardized with and ECMA or ANSI specification? And what do ECMA and ANSI stand for? )
 
 Great questions! Let’s clarify each point systematically:
 
@@ -822,8 +818,7 @@ Let me know if you’d like further clarification on any point! 🚀
 ---
 ---
 
-What about the `IEEE`. What does it stand for ?
-And is in the same category as ISO, ANSI and ECMA ?
+!!! - What about the `IEEE`. What does it stand for ? And is in the same category as ISO, ANSI and ECMA ?
 
 ### 🌐 **What is IEEE?**
 
@@ -870,13 +865,7 @@ Let me know if you'd like a deeper dive into any of these organizations! 🚀
 ---
 ---
 
-Look at this text: 
-"Political nationalism will most probably prevail for as long as we live. Economic nationalism is about to disappear. And technical nationalism has disappeared! "
-
-What is nationalism?
-Then what is each nationalism mentioned in the text?
-
-Can you guess where I got that text from?
+!!!- Look at this text: <br>"Political nationalism will most probably prevail for as long as we live. Economic nationalism is about to disappear. And technical nationalism has disappeared! " <br><br> What is nationalism? <br> Then what is each nationalism mentioned in the text?<br>Can you guess where I got that text from?
 
 ### 🌍 **What is Nationalism?**
 
@@ -917,6 +906,87 @@ Peter Drucker often wrote about the evolving dynamics of politics, economics, an
 
 Did I hit the mark, or is it from a different source? 😊
 
----
+
+``` --- 
+```
+
+!!! - /*LINK - ask later */
+!!! - What about JavaScript? Does that mean that ECMAScript is the specification and JavaScript is one implementation of ECMAScript?
+!!! - Why did Google adopt Kotlin and leave Java? Why didn't they adopt their own language 'Go'?
+!!! - Where can I find the C++ specification?
+!!! - Can I become a vendor? How do I implement the specification?
+!!! - Can I make my own specification/standard?
+
+
+!!! - I would like to hear what the ISO-Cpp guys (or the ThinkCell guys who are part of the ISO Cpp committee) say about why standardization matters, coz corporate-owned languages also achieve consistency worldwide;  What advantages Standard offers (if any); And are there any disadvantages to Standardization? (compared to corporate consistency)
+
+``` --- 
+```
+``` --- 
+```
+!!! - Does making a language standardized offer any advantages over the languages that are corporate-owned? Coz look at this, Java and C# are not standardized but that doesn't mean when programming stuff in Java or C#, developers in the U.S. code differently ( or use a different specification ) from developers in Europe.
+
+Great question! While it is true that corporate-owned languages like Java and C# achieve consistency worldwide, there are **specific advantages to standardizing a language** through international bodies like ISO/IEC. Let’s explore the differences and why standardization might matter:
+
 ---
 
+## 🌟 **Advantages of Standardizing a Language**
+
+1. **Neutral Governance**  
+   - **Standardized Languages:** Governed by an **international committee** of experts from various backgrounds, industries, and countries, ensuring that no single entity controls the language.  
+   - **Corporate-Owned Languages:** Entirely dependent on the **corporation’s decisions** and priorities. This can lead to biases or features catering to corporate interests (e.g., Oracle’s licensing changes for Java).
+
+2. **Multiple Implementations**  
+   - **Standardized Languages:**  
+     - Anyone can implement the standard (e.g., GCC, Clang, MSVC for C++).  
+     - Encourages competition and diversity, which can lead to more robust and optimized tools.  
+   - **Corporate-Owned Languages:** Usually have a **single primary implementation** (e.g., Oracle JDK for Java, .NET for C#). Alternative implementations exist but often lag behind the official one.
+
+3. **Longevity**  
+   - **Standardized Languages:** Tend to **outlive trends** and corporate interests. For example, C and C++ have persisted for decades due to their open standards.  
+   - **Corporate-Owned Languages:** Risk becoming obsolete if the owning corporation decides to stop supporting them (e.g., Google’s discontinuation of Dart for web development).
+
+4. **Interoperability Across Systems**  
+   - **Standardized Languages:**  
+     - Ensure compatibility across different platforms and systems.  
+     - Developers worldwide can use **the same specification** for writing code, making collaboration seamless.  
+   - **Corporate-Owned Languages:** Also achieve global consistency, but this depends on the corporation's ability to enforce a single specification.
+
+5. **Legal Certainty**  
+   - **Standardized Languages:**  
+     - Have **no proprietary restrictions**; developers can use them freely without worrying about licensing issues.  
+     - This is particularly crucial for government projects, defense, or large enterprises.  
+   - **Corporate-Owned Languages:** May have **licensing fees** or restrictions (e.g., Oracle JDK's licensing changes caused many organizations to switch to OpenJDK).
+
+6. **Community Involvement and Transparency**  
+   - **Standardized Languages:**  
+     - Changes to the language are discussed openly within standards committees (e.g., the ISO C++ committee).  
+     - Developers can propose ideas and influence the language’s future.  
+   - **Corporate-Owned Languages:** Decisions are usually made internally by the corporation, with limited external input.
+
+---
+
+## 🌐 **Why Corporate-Owned Languages Still Work Globally**
+
+You’re right that **developers in the U.S. and Europe code the same way in Java or C#** despite these being corporate-owned. This is because:  
+1. **Corporate Control Ensures Consistency:**  
+   Corporations like Oracle (Java) or Microsoft (.NET) tightly control the specification and tooling, ensuring that everyone uses the same version of the language globally.
+
+2. **Global Adoption of Single Implementations:**  
+   Most developers use the official implementation (e.g., Oracle JDK or .NET Core), which guarantees consistent behavior.
+
+3. **Strong Ecosystem:**  
+   Corporate-backed languages often have **well-funded tooling, frameworks, and libraries**, making them highly attractive despite the lack of standardization.
+
+---
+
+## ✅ **Conclusion: Is Standardization Better?**
+
+- **Yes, if:** You value **neutrality, openness, competition**, and the ability to use multiple implementations. Standardized languages like C++ and C are also better suited for **long-term stability** and legally complex environments.  
+- **No, if:** You’re happy with a **single implementation and tight corporate control**. Languages like Java and C# prove that strong ecosystems and consistency are achievable without standardization.
+
+In essence, both approaches have their strengths, but **standardization offers additional guarantees of independence, flexibility, and longevity** that corporate ownership cannot always provide.
+
+## 
+``` --- 
+```
