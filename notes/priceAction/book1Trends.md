@@ -1,15 +1,26 @@
 # TRADING PRICE ACTION: TRENDS
-Alternative way of describing ABC pullBacks/corrections:
+<details>
+<summary> Alternative way of describing ABC pullBacks/corrections: </summary>
 - When there is a pullback in a bull leg, the first bar whose high surpases the prior/previous bar's high is a high 1 long entry
 - If the pullback continues down for a second leg, then the first bar (in the second leg) that goes above the high of the previous bar's high would be the high 2 entry
 - In a sideways ABC pullback, it is common for the C leg to not pass the A leg level
+</details>
+---
+
 > [!IMPORTANT]
 > Ask ChatGPT to explain this part: "The big legs are unstoppable but the small price action is fine-tuned by some institutional traders who are watching every tick or have programs designed to take trades based on small price movement. For example, some Emini traders will try to scalp-out with a one-point profit, or four ticks... "
+
+<details>
+ <summary> I've Learnt that: </summary>
+- Two-legged corrections are reliable setups for trades in the direction of the trend.
 - In general, any trade over 100 contracts should be considered institutional in today's Emini market
 - Institutions can sometimes buy the high to prevent a potential 5 tick failure (and they think the market will go higher and they will likely buy more as it goes up)
 - Four-tick scalps work so often
 - In 5 minute bar charts: It is very common in strong trends for a reversal bar to reverse it's appearance in the final few seconds before the bar closes.
 - Therefore, when buying countertrend against a strong trend, it is imperative to wait for the signal bar to close before placing my order, and then only enter on a stop at one tick beyond the bar in the direction of your trade (if I'm buying, buy at one tick above the high of the prior bar on a stop).
+- Don't rely on Fibonacci and Ellitt Wave stuff. They are useless. 
+- Rely on proven chart patterns (clear and reliable price action pattern)
+</details>
 
 <details>
  <summary> Title </summary>
