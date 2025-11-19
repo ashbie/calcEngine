@@ -1,5 +1,13 @@
 # QUANT DEVELOPER STUFF
 
+<details>
+ <summary> Title </summary>
+
+> example text
+
+</details>
+
+
 ## Tibra's QTD Accelerator Program
 
 ### Key Points

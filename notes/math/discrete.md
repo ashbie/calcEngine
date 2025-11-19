@@ -1,4 +1,12 @@
 # Discrete Mathematics
+
+<details>
+ <summary> Title </summary>
+
+> example text
+
+</details>
+
 ## Learning Plan
 1. The Basic Concepts of Dis. Math
 2. Applying (aka Implementing) Dis. Math in Computer Science (and Data Science)

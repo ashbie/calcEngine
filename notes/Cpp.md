@@ -1,5 +1,12 @@
 # WORKING WITH POINTERS AND ARRAYS IN C++ 20
 
+<details>
+ <summary> Title </summary>
+
+> example text
+
+</details>
+
 # 5. Pointing to Class Members
 Module 5:
 ![alt text](image-40.png)
@@ -933,6 +940,9 @@ Did I hit the mark, or is it from a different source? 😊
 
 <details>
  <summary> Title </summary>
+
+> example text
+
 </details>
 
 <details>

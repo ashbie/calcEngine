@@ -1,4 +1,12 @@
 # TRADING PRICE ACTION: TRENDS
+
+<details>
+ <summary> Title </summary>
+
+> example text
+
+</details>
+
 <details>
 <summary> Alternative way of describing ABC pullBacks/corrections: </summary>
 - When there is a pullback in a bull leg, the first bar whose high surpases the prior/previous bar's high is a high 1 long entry
