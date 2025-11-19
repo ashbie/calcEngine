@@ -199,3 +199,64 @@ CUT_ROD(p, n) {
 }
 
 ```
+
+## Sections 
+
+<details>
+ <summary> Asymptotic Notation </summary>
+
+![Gemini's explanation of asymptotic notation](image-2.png)
+
+> Asymptotic Notation is the system of symbols (like Big O, Big Omega, and Big Theta) used to mathematically describe the efficiency or running time of an algorithm as the input size ($n$) approaches infinity. It is used to categorize algorithms by their growth rate.
+
+The word **asymptotic** (pronounced *a-sim-TOT-ik*) is a mathematical term that means **approaching a value or curve arbitrarily closely, but never actually meeting it.** This approach happens "in the limit," typically as a variable approaches infinity.
+
+In the context of algorithm analysis (what you're studying), "asymptotic" means **"for large input sizes"**.
+
+***
+
+## 1. Meaning of "Asymptotic"
+
+The term comes from the word **asymptote**, which is a line or curve that a function approaches.
+
+* **Core Meaning:** Of or relating to an asymptote; approaching a limit without ever reaching it.
+* **Mathematical Context (Calculus/Analysis):** A function $f(x)$ is asymptotic to a line $L$ if the distance between $f(x)$ and $L$ gets closer and closer to zero as $x$ tends to infinity.
+    * **Analogy:** Imagine a perpetual chase where one runner always gets closer to the other, but the distance between them is always being cut in half, so the gap is never fully closed. 
+* **Computer Science Context (Algorithms):** When describing an algorithm's performance (like its runtime), **asymptotic analysis** focuses on the **long-term behavior**—that is, how the algorithm scales when the size of the input, $n$, becomes extremely large. It allows you to ignore minor details like constant factors or lower-order terms that don't matter when $n$ is big.
+
+***
+
+## 2. Does the word "Symptotic" Exist?
+
+The word **symptotic** does exist, but it is **rare** and generally **not used** in modern scientific or mathematical contexts.
+
+* **Primary Usage:** It is mostly an old or archaic term that can mean:
+    * **Intersecting/Crossing:** Sometimes used in classical geometry to describe lines that cross, contrasting with "asymptotic" lines which never meet.
+    * **Relating to a symptom:** Occasionally used as an alternate or shortened form of *symptomatic* (relating to a symptom of a disease).
+
+The word you encountered in algorithm analysis is definitively **asymptotic** (with the leading 'a-').
+
+***
+
+## 3. Meaning of "Notation"
+
+A **notation** is a **system of signs, symbols, or characters** used to represent specialized facts, quantities, or information.
+
+* **Core Meaning:** A system of graphic symbols for a specialized use.
+* **Examples:**
+    * **Musical Notation:** Using symbols (staves, notes, clefs) to represent musical sound.
+    * **Mathematical Notation:** Using symbols (e.g., $+$, $\int$, $\Sigma$) to represent operations and concepts.
+
+***
+
+## The Complete Term: Asymptotic Notation
+
+Combining these definitions, **Asymptotic Notation** is the **system of symbols (like Big O, Big Omega, and Big Theta) used to mathematically describe the efficiency or running time of an algorithm as the input size ($n$) approaches infinity.**
+
+It is used to categorize algorithms by their growth rate. For example, when you see:
+
+$$T(n) = O(n^2)$$
+
+This is **Big O notation**, which is one form of **asymptotic notation**. It means that for very large input sizes ($n$), the algorithm's runtime $T(n)$ will grow **no faster than** a constant multiple of $n^2$.
+
+</details>
