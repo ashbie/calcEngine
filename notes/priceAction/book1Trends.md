@@ -445,3 +445,11 @@ Would you like me to turn this into a **printable PDF cheat sheet** (clean layou
 That way you could keep it open beside your chart when reviewing price action examples like Figure 2.3.
 
 </details>
+
+<details>
+
+<summary>Things to look out for</summary>
+
+> I
+
+</details>
