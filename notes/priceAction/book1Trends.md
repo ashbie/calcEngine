@@ -448,8 +448,16 @@ That way you could keep it open beside your chart when reviewing price action ex
 
 <details>
 
-<summary>Things to look out for</summary>
+<summary>How to base my trades on Probability and not my emotions / bias</summary>
 
-> I
+> If I want to base my trades on Probability and not my emotions / bias, there are **5 core objective elements** that I should read from price action. These elements tell me which side has a higher probability of winning.
+
+The 5 elements are about 3 things:
+- The Trend
+- The EMA
+- The Signal
+2 elements focus on the Trend; 1 elements focuses on the EMA; 2 elements focus on the Signal.
+
+
 
 </details>
