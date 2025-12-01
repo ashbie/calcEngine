@@ -1,11 +1,17 @@
 # WORKING WITH POINTERS AND ARRAYS IN C++ 20
 
 <details>
- <summary> Title </summary>
+ <summary> Empty </summary>
 
-> example text
+> [!IMPORTANT]
+> the GitHub way
 
 </details>
+
+# Start: Uncategorized
+<details>
+ <summary> Uncategorized </summary>
+
 
 # 5. Pointing to Class Members
 Module 5:
@@ -333,7 +339,8 @@ int main() {
 #### Version of main() that WILL work
 We learned in one of the previous lessons that we can pass the string literal to a function by using the constant pointer to a char value. It has to be constant because the string literal is in a read only part of memory.
 
-!!! - Q. But `str` is a character pointer, so why is he using the square-bracket notation to access the elements?
+> [!IMPORTANT]
+>  Q. But `str` is a character pointer, so why is he using the square-bracket notation to access the elements?
 R. ???
 
 ---
@@ -572,7 +579,8 @@ When in doubt, **follow the conventions of the codebase you’re working in.** �
 ---
 
 # Modern C++
-!!! - What are the performance benefits of having Templates in C++ resolve at compile-time, compared to Generics in Java and C# that resolve at run-time?
+> [!IMPORTANT]
+>  What are the performance benefits of having Templates in C++ resolve at compile-time, compared to Generics in Java and C# that resolve at run-time?
 
 The compile-time resolution of templates in C++ offers several performance advantages over the run-time resolution of generics in Java and C#. Here's a breakdown of the key benefits:
 
@@ -657,7 +665,8 @@ C++ templates excel in performance-critical scenarios because they leverage **co
 
 ---
 # Standardization
-!!! - Amongst the popular programming languages, is C++ the only one that is standardized? Meaning is it the only one that doesn't belong to a corporation? Meaning is it the only one that has a specification and then that specification is implemented by other vendors?
+> [!IMPORTANT]
+>  Amongst the popular programming languages, is C++ the only one that is standardized? Meaning is it the only one that doesn't belong to a corporation? Meaning is it the only one that has a specification and then that specification is implemented by other vendors?
 
 
 
@@ -732,7 +741,8 @@ However, C++ is one of the most prominent and widely-used languages in this cate
 
 ---
 ---
-!!! - Is the ISO (International Organization for Standardization) that standardizes C++ the same one that standardizes C, Ada, Fortran, SQL? (I ask this because in the previous response, I see `Standardized by: ISO/IEC ....`. And what does IEC stand for? And I though Kotlin was owned by Google because the switched from Java to Kotlin for Android development; so do they own Kotlin? And what does it mean when someone says `PLACEHOLDER(e.g.C++) is standardized with an ISO specification` ? What would be the difference if it was standardized with and ECMA or ANSI specification? And what do ECMA and ANSI stand for? )
+> [!IMPORTANT]
+>  Is the ISO (International Organization for Standardization) that standardizes C++ the same one that standardizes C, Ada, Fortran, SQL? (I ask this because in the previous response, I see `Standardized by: ISO/IEC ....`. And what does IEC stand for? And I though Kotlin was owned by Google because the switched from Java to Kotlin for Android development; so do they own Kotlin? And what does it mean when someone says `PLACEHOLDER(e.g.C++) is standardized with an ISO specification` ? What would be the difference if it was standardized with and ECMA or ANSI specification? And what do ECMA and ANSI stand for? )
 
 Great questions! Let’s clarify each point systematically:
 
@@ -797,7 +807,9 @@ In short:
 ## 📚 **What Does ‘Standardized with an ISO Specification’ Mean?**
 
 When someone says:  
-> *“C++ is standardized with an ISO specification”*  
+
+> [!IMPORTANT]
+>  *“C++ is standardized with an ISO specification”*  
 
 It means:  
 1. There is an **official, internationally accepted specification** for the language.  
@@ -825,7 +837,8 @@ Let me know if you’d like further clarification on any point! 🚀
 ---
 ---
 
-!!! - What about the `IEEE`. What does it stand for ? And is in the same category as ISO, ANSI and ECMA ?
+> [!IMPORTANT]
+>  What about the `IEEE`. What does it stand for ? And is in the same category as ISO, ANSI and ECMA ?
 
 ### 🌐 **What is IEEE?**
 
@@ -916,8 +929,21 @@ Did I hit the mark, or is it from a different source? 😊
 
 ---
  <a name="section-ask-later"> <!-- /*LINK - ask later */ --> </a>
- 
-# Questions to ask later
+
+
+</details>
+
+
+# End: Uncategorized
+
+
+# Start: Questions to ask later
+
+<details>
+<summary>
+Questions to ask ChatGPT or ThinkCell
+</summary>
+
 > [!IMPORTANT]
 > What about JavaScript? <br>Does that mean that ECMAScript is the specification and JavaScript is one implementation of ECMAScript?
 
@@ -937,18 +963,18 @@ Did I hit the mark, or is it from a different source? 😊
 > I would like to hear what the ISO-Cpp guys (or the ThinkCell guys who are part of the ISO Cpp committee) say about why standardization matters, coz corporate-owned languages also achieve consistency worldwide;<br>  What advantages Standardization offers (if any);<br> And are there any disadvantages to Standardization? (compared to corporate consistency)
 <a name="end-section-ask-later"></a>
 ---
-
-<details>
- <summary> Title </summary>
-
-> example text
-
 </details>
+
+# End: Questions to ask later
+
+
+# Start: Standardization Advantages
 
 <details>
  <summary> Standardization Advantages </summary>
  
-> Does making a language standardized offer any advantages over the languages that are corporate-owned? <br>Coz look at this, Java and C# are not standardized but that doesn't mean when programming stuff in Java or C#, developers in the U.S. code differently ( or use a different specification ) from developers in Europe.
+> [!IMPORTANT]
+>  Does making a language standardized offer any advantages over the languages that are corporate-owned? <br>Coz look at this, Java and C# are not standardized but that doesn't mean when programming stuff in Java or C#, developers in the U.S. code differently ( or use a different specification ) from developers in Europe.
 
 Great question! While it is true that corporate-owned languages like Java and C# achieve consistency worldwide, there are **specific advantages to standardizing a language** through international bodies like ISO/IEC. Let’s explore the differences and why standardization might matter:
 
@@ -1013,15 +1039,22 @@ In essence, both approaches have their strengths, but **standardization offers a
 
 </details>
 
+# End: Standardization Advantages
+
+
+# Start: Programming Paradigms && Design Philosophies
+
 <details>
 
 <summary>
 Programming Paradigms && Design Philosophies
 </summary>
 
-> https://gemini.google.com/app/2e19c3d0c88ff7aa
+> [!IMPORTANT]
+>  https://gemini.google.com/app/2e19c3d0c88ff7aa
 
-!!! -  What is imperative programming?
+> [!IMPORTANT]
+> What is imperative programming?
 
 Imperative programming is a programming paradigm where the developer explicitly tells the computer **how** to achieve a desired result through a sequence of step-by-step commands. It focuses on describing the **control flow** of the program—the exact order in which operations should occur—and how these operations change the program's **state** (the data stored in its variables).
 
@@ -1079,7 +1112,8 @@ Most widely used programming languages are primarily or partially imperative:
 Would you like to explore **procedural programming**, which is a sub-paradigm of imperative programming?
 
 
-!!! -  Doesn't `C++` also support multiple paradigms? Isn't it a:  Functional Programming language, an Object Oriented language, a Data Oriented language, an Imperative Programming language,  and doesn't it support a Generic Programming style? Isn't all this variety some of the reasons why `C++` is called a General Programming Language?
+> [!IMPORTANT]
+>  Doesn't `C++` also support multiple paradigms? Isn't it a:  Functional Programming language, an Object Oriented language, a Data Oriented language, an Imperative Programming language,  and doesn't it support a Generic Programming style? Isn't all this variety some of the reasons why `C++` is called a General Programming Language?
 
 That's absolutely correct! **C++** is considered a **multi-paradigm programming language**, and its support for a wide variety of styles is one of the primary reasons it is called a **General-Purpose Programming Language** (GPL).
 
@@ -1137,3 +1171,5 @@ http://googleusercontent.com/youtube_content/0
 
 
 </details>
+
+# End: Programming Paradigms && Design Philosophies
