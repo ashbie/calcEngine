@@ -1173,3 +1173,41 @@ http://googleusercontent.com/youtube_content/0
 </details>
 
 # End: Programming Paradigms && Design Philosophies
+
+# Start: Rabgee's appeal
+
+RabG
+Sub No. 11275, N** K*****
+Phone number
+email address
+
+20th November, 2025
+
+To:
+The Deputy Commissioner - Customs Business Policy and Support
+Zambia Revenue Authority - Head Office
+Lusaka, Zambia
+
+RE: APPEAL FOR RECONSIDERATION TO USE APC 430
+
+Dear Sir/Madam,
+
+I respectfully submit this appeal requesting a review of the decision to deny my duty-free exemption under the Returning Residents provisions for my motor vehicle imported from Singapore. The initial decision appears to have relied primarily on the timing of my final payment, but this does not reflect the actual ownership timeline, the contract, nor the law governing transfer of property in goods.
+
+I am providing clear legal, documentary, and factual evidence to demonstrate full compliance with the Returning Resident requirements.
+
+1. Timeline and Proof of Ownership Before Departure
+The sequence of events below confirms that the vehicle was acquired, processed for export, and shipped under my ownership before I returned to Zambia.
+   - 6 September 2025: Vehicle deregistered in Singapore
+   - 16 September 2025: First payment of USD 3,400 made
+   - 19 September 2025: Export document issued
+   - 6 October 2025: Commercial invoice issued in my name for the full amount of $4,900
+   - 10 October 2025: Bill of lading issued - my name listed as consignee
+   - 10 October 2025: Second instalment of $1,217 made (payment was made in ZMW, i.e. K28,000. It bounced and was resent on 13 October, 2025)
+   - 11 October 2025: Returned to Zambia
+   - 21 October 2025: Final payment paid (USD 283)
+
+Both the commercial invoice and bill of lading - the two controlling documents on ownership and shipment - were completed before my return.
+
+
+# End: Rabgee's appeal
