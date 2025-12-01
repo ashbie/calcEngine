@@ -1176,6 +1176,9 @@ http://googleusercontent.com/youtube_content/0
 
 # Start: Rabgee's appeal
 
+<details>
+<summary> Rabgee's appeal </summary>
+
 RabG
 Sub No. 11275, N** K*****
 Phone number
@@ -1208,6 +1211,6 @@ The sequence of events below confirms that the vehicle was acquired, processed f
    - 21 October 2025: Final payment paid (USD 283)
 
 Both the commercial invoice and bill of lading - the two controlling documents on ownership and shipment - were completed before my return.
-
+</details>
 
 # End: Rabgee's appeal
