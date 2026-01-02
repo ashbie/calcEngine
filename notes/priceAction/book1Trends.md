@@ -1,22 +1,17 @@
 # TRADING PRICE ACTION: TRENDS
 
 <details>
- <summary> Title </summary>
+ <summary> Al Brooks ideas </summary>
 
-> example text
+- One of the most important things for a trader to do is decide whether the market is trending or not
+- What happens after a breakout is one of the most important things
+- Important idea: smaller patterns evolve into larger ones that can be traded
+![the core message](image.png)
 
 </details>
 
-<details>
-<summary> Alternative way of describing ABC pullBacks/corrections: </summary>
-- When there is a pullback in a bull leg, the first bar whose high surpases the prior/previous bar's high is a high 1 long entry
-- If the pullback continues down for a second leg, then the first bar (in the second leg) that goes above the high of the previous bar's high would be the high 2 entry
-- In a sideways ABC pullback, it is common for the C leg to not pass the A leg level
-</details>
----
 
-> [!IMPORTANT]
-> Ask ChatGPT to explain this part: "The big legs are unstoppable but the small price action is fine-tuned by some institutional traders who are watching every tick or have programs designed to take trades based on small price movement. For example, some Emini traders will try to scalp-out with a one-point profit, or four ticks... "
+# Start: I've Learnt that
 
 <details>
  <summary> I've Learnt that: </summary>
@@ -26,18 +21,40 @@
 - Four-tick scalps work so often
 - In 5 minute bar charts: It is very common in strong trends for a reversal bar to reverse it's appearance in the final few seconds before the bar closes.
 - Therefore, when buying countertrend against a strong trend, it is imperative to wait for the signal bar to close before placing my order, and then only enter on a stop at one tick beyond the bar in the direction of your trade (if I'm buying, buy at one tick above the high of the prior bar on a stop).
-- Don't rely on Fibonacci and Ellitt Wave stuff. They are useless. 
+- Don't rely on Fibonacci and Elliott Wave stuff. They are useless. 
 - Rely on proven chart patterns (clear and reliable price action pattern)
 </details>
 
-<details>
- <summary> Title </summary>
-> question goes here
+# End: I've Learnt that
 
-response goes here
+
+
+# Start: Alternative way of describing ABC pullBacks/corrections
+
+<details>
+<summary> Alternative way of describing ABC pullBacks/corrections: </summary>
+- When there is a pullback in a bull leg, the first bar whose high surpases the prior/previous bar's high is a high 1 long entry
+- If the pullback continues down for a second leg, then the first bar (in the second leg) that goes above the high of the previous bar's high would be the high 2 entry
+- In a sideways ABC pullback, it is common for the C leg to not pass the A leg level
 </details>
 
-# ChatGPT stuff
+# End: Alternative way of describing ABC pullBacks/corrections
+
+
+
+# Start: Ask ChatGPT to explain
+
+<details>
+<summary> Ask ChatGPT to explain </summary>
+> [!IMPORTANT]
+> Ask ChatGPT to explain this part: "The big legs are unstoppable but the small price action is fine-tuned by some institutional traders who are watching every tick or have programs designed to take trades based on small price movement. For example, some Emini traders will try to scalp-out with a one-point profit, or four ticks... "
+</details>
+
+# End: Ask ChatGPT to explain
+
+
+# Start: 10-Year U.S. Treasury Note Futures contract
+
 <details>
  <summary> Appearance reversal before candle/bar close </summary>
 > What about this part: 
@@ -223,6 +240,13 @@ When traders buy or sell Treasury futures, they’re **speculating** on future i
 Would you like a **visual diagram of this bond-price/interest-rate relationship** too? I can sketch that for you next!
 
 </details>
+
+# End: 10-Year U.S. Treasury Note Futures contract
+
+
+
+
+# Start: Probabilistic Trading like Al Brooks
 
 <details>
 <summary>Probabilistic Trading like Al Brooks</summary>
@@ -446,6 +470,13 @@ That way you could keep it open beside your chart when reviewing price action ex
 
 </details>
 
+# End: Probabilistic Trading like Al Brooks
+
+
+
+
+# Start: Base my trades on Probability
+
 <details>
 
 <summary>How to base my trades on Probability and not my emotions / bias</summary>
@@ -461,3 +492,5 @@ The 5 elements are about 3 things:
 
 
 </details>
+
+# End: Base my trades on Probability
