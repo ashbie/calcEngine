@@ -11,6 +11,32 @@
 </details>
 
 
+# Start: Introduction
+
+<details>
+ <summary> Introduction </summary>
+
+ - In this series of books, Brooks is presenting how he trades the markets (and also how he views them).
+ - Everything I need to make a living out of trading is provided in this series of books
+ - It's up to me to spend time learning how to do it
+ - His previous book focused on how to read price action.
+ - This series of books centers on how to use price action to trade the markets.
+ - Brooks' goals is to describe his understanding on why carefully selected trades offer great risk/reward ratios, and ways to profit from the setups
+ - Everybody looks at price charts but usually just briefly
+ - Price charts contain a lot of information that can be used to make profitable trades
+ - Most of it can only be used effectively/effeciently if I spend time trying to understand what each bar is telling me about what institutional money is doing.
+ - Institutions are the market coz 90% of all trading is done by institutions
+ - No trade can take place unless one institution is willing to take one side and another is willing to take the other side
+ - So every trade that I take has a profitable trader on the other side of the trade (this profitable trader is part of the collection of profitable institutions)
+
+ - My trade takes place if an institution also wants to make the same trade
+ - The market can only go to a price where there are institutions willing to buy and other institutions willing to sell.
+
+</details>
+
+# End: Introduction
+
+
 # Start: I've Learnt that
 
 <details>
