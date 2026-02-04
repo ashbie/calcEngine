@@ -31,6 +31,8 @@
 
  - My trade takes place if an institution also wants to make the same trade
  - The market can only go to a price where there are institutions willing to buy and other institutions willing to sell.
+ - As an individual trader, I can't make the market move. Only institutions can do that.
+ - I should always trade in the direction of the majority of institutional money
 
 </details>
 
