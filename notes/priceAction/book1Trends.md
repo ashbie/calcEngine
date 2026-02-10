@@ -33,6 +33,11 @@
  - The market can only go to a price where there are institutions willing to buy and other institutions willing to sell.
  - As an individual trader, I can't make the market move. Only institutions can do that.
  - I should always trade in the direction of the majority of institutional money
+ - I can't believe institutions(/Smart Money) like Pension Funds and Insurance Companies trade the markets! But I'm not surprised that institutions like Banks, Mutual Funds, Hedge Funds, and Brokerage Houses do.
+ - Brooks said all these institutions make a living by trading
+ - My job is to follow institutions behavior. To do what they do.
+ - How can I tell what they did during the day? If the market went up, then more money went into buying. If it went down, then more money went into selling.
+ - Computers are now doing a lot of trading. They can instantly analyse economic data, and statistically analyse price action THEN place trades based on that analysis.
 
 </details>
 
