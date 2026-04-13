@@ -1,4 +1,4 @@
-# WORKING WITH POINTERS AND ARRAYS IN C++ 20
+# Start: Template
 
 <details>
  <summary> Empty </summary>
@@ -8,12 +8,108 @@
 
 </details>
 
+# End: Template
+
+
+# Start: What is C++ for?
+
+<details>
+ <summary> What is C++ for? </summary>
+
+> [!IMPORTANT]
+> 3. 
+### Why C++?
+- C++ is a general purpose programming language; This means that it can be used to make all kinds of applications for different kinds of platforms, not just to make specialised apps for specific platforms. 
+   >- We dive deeper into general purpose (Programming Paradigms && Types of Apps) later 
+- It's the language for power && performance;
+- It's the language for having the most control not only over the speed of your apps, but also the memory use of your apps
+- According to Kate Gregory: { 
+   - C++ is very popular 
+   - It's used by millions of devs (and students)
+   - There are many specialised libraries that can be used for a huge variety of problems and projects.
+   - } 
+
+### General Purpose Language
+- Here, Kate Gregory talked about the other parts that make `C++` a General Purpose Language;
+- The first part is Cpp's ability to support multiple `Programming Paradigms`: 
+```
+- Data Oriented
+- Object Oriented
+- Imperative Programming
+- Functionnal Programming
+- Generic Programming
+
+For more info on this, see 'Start: Programming Paradigms && Design Philosophies'
+```
+
+- The second part is it's ability to write a wide variety of apps/tools/things (We already talked about this part in the "`Why C++?`" section): 
+```
+- Financial apps
+- Scientific apps
+- Games
+- Phone apps
+- Libraries && Frameworks
+- Desktop apps
+- Operating Systems
+```
+
+```
+QUESTIONS
+
+Why is she saying I can use C++ to write all these types of applications on all these platforms, but when I look at things, what's used on these platforms to build apps is different languages; Look at this:
+- On Phones, we use Swift for iOS apps, then Kotlin/Java for Android apps
+- On Desktops, we use '.Net && C#' or Java for Windows apps, then Swift (I think - or whatever Apple demands) for MacOS apps
+So what's the deal with that?
+```
+
+### Power and Performance
+![alt text](image-102.png)
+She mentionned a lot of things in this section; These are the `features/characteristics` of the language that make it the King of Speed / King of Power and Performance:
+- She said it's the language for speed
+- It's design and evolution are there to support very fast code
+
+#### `close to the metal`:
+
+- She said the way I think when working in C++ is similar to the way my computer is probably doing things
+- She mentionned how the library and the language have a focus on performance, so I don't need to think about these things coz other people already thought about them for me - like:
+```
+When C++ was first developed, CPUs didn't have the large caches they do now, and cache friendliness wasn't important. But these days, it turns out that a C++ collection like the standard library's vector class can outperform more indirect collections, which are the only choice in some languages, because all the collection elements are next to each other in memory, and that lets the CPU get to them more quickly.
+```
+
+#### `zero cost abstractions`:
+
+- She also said the goal is that the abstractions (the higer level thinking), should carry no performance cost at all; This is that `zero cost abstractions` stuff;
+- The `zero cost abstractions` that C++ gives me is: 
+```
+The performance cost of using an abstraction should not be more than if I did the same work myself by hand without the abstraction.
+
+- Performance cost: 
+   - Runtime of the application or
+   - Memory use
+- Abstraction (anything above Assembly language): 
+   - a class
+   - a function
+```
+So in other words, I could write a class or I could do the whole thing without a class, it mustn't be slower to use a class.
+
+#### `move work to compile time`:
+C++ allows me to move work to compilation (which leads to slower and longer compile times - which some people complain about); This makes the Runtime of the app/program much faster - which is a net win coz there is no performance cost in figuring out which function to call, or which component to load during Runtime.
+
+
+
+
+</details>
+
+# End: What is C++ for?
+
+
 # Start: Uncategorized
 <details>
  <summary> Uncategorized </summary>
 
+## WORKING WITH POINTERS AND ARRAYS IN C++ 20
 
-# 5. Pointing to Class Members
+## 5. Pointing to Class Members
 Module 5:
 ![alt text](image-40.png)
 ## 5.1. Accessing Class Members with the Arrow Operator
@@ -350,7 +446,7 @@ R. ???
 
 ---
 
-# Kate Gregory stuff
+## Kate Gregory stuff
 ## C++ notes
 ### Standardization
 - C++ is defined by a standard
@@ -578,7 +674,7 @@ When in doubt, **follow the conventions of the codebase youâ€™re working in.** ð
 
 ---
 
-# Modern C++
+## Modern C++
 > [!IMPORTANT]
 >  What are the performance benefits of having Templates in C++ resolve at compile-time, compared to Generics in Java and C# that resolve at run-time?
 
@@ -664,7 +760,7 @@ void printSize<int>() { std::cout << "Specialized for int"; }
 C++ templates excel in performance-critical scenarios because they leverage **compile-time type resolution**, **type safety**, and **highly optimized code generation**. Java and C# generics, while more flexible in some contexts, pay a performance price for their runtime type resolution and boxing behavior.
 
 ---
-# Standardization
+## Standardization
 > [!IMPORTANT]
 >  Amongst the popular programming languages, is C++ the only one that is standardized? Meaning is it the only one that doesn't belong to a corporation? Meaning is it the only one that has a specification and then that specification is implemented by other vendors?
 
