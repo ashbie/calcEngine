@@ -48,6 +48,7 @@
 
 <details>
  <summary> I've Learnt that: </summary>
+
 - Two-legged corrections are reliable setups for trades in the direction of the trend.
 - In general, any trade over 100 contracts should be considered institutional in today's Emini market
 - Institutions can sometimes buy the high to prevent a potential 5 tick failure (and they think the market will go higher and they will likely buy more as it goes up)
@@ -56,6 +57,15 @@
 - Therefore, when buying countertrend against a strong trend, it is imperative to wait for the signal bar to close before placing my order, and then only enter on a stop at one tick beyond the bar in the direction of your trade (if I'm buying, buy at one tick above the high of the prior bar on a stop).
 - Don't rely on Fibonacci and Elliott Wave stuff. They are useless. 
 - Rely on proven chart patterns (clear and reliable price action pattern)
+
+---
+
+### From: `Start: Questions on Pension Funds && Insurance Companies`
+
+- One of the bigs things that creates trends is the big institutions like Pension Funds && Insurance Companies accumulating assets/securities;
+- My job as a retail price action trader is to spot that giant footprint and hop on for the ride;
+- Shift my mindset from 'Gambling' to joining the side with a `higher probability`
+
 </details>
 
 # End: I've Learnt that
@@ -66,6 +76,7 @@
 
 <details>
 <summary> Alternative way of describing ABC pullBacks/corrections: </summary>
+
 - When there is a pullback in a bull leg, the first bar whose high surpases the prior/previous bar's high is a high 1 long entry
 - If the pullback continues down for a second leg, then the first bar (in the second leg) that goes above the high of the previous bar's high would be the high 2 entry
 - In a sideways ABC pullback, it is common for the C leg to not pass the A leg level
@@ -75,21 +86,26 @@
 
 
 
-# Start: Ask ChatGPT to explain
+# Start: Ask ChatGPT/Gemini to explain
 
 <details>
-<summary> Ask ChatGPT to explain </summary>
+<summary> Ask ChatGPT/Gemini to explain </summary>
+
 > [!IMPORTANT]
-> Ask ChatGPT to explain this part: "The big legs are unstoppable but the small price action is fine-tuned by some institutional traders who are watching every tick or have programs designed to take trades based on small price movement. For example, some Emini traders will try to scalp-out with a one-point profit, or four ticks... "
+> Ask ChatGPT/Gemini to explain this part: 
+```
+"The big legs are unstoppable but the small price action is fine-tuned by some institutional traders who are watching every tick or have programs designed to take trades based on small price movement. For example, some Emini traders will try to scalp-out with a one-point profit, or four ticks... "
+```
 </details>
 
-# End: Ask ChatGPT to explain
+# End: Ask ChatGPT/Gemini to explain
 
 
 # Start: 10-Year U.S. Treasury Note Futures contract
 
 <details>
  <summary> Appearance reversal before candle/bar close </summary>
+
 > What about this part: 
 ```text
 Traders pay close attention to the seconds before key time frames close, especially 3, 5, 15, and 60 minute bars. This is also true on key volumes for volume bar charts. For example, if many traders follow the 10,000 shares per bar chart for the 10-Year U.S. Treasury Note Futures contract, then when the bar is about to close (it closes on the first trade of any size that results in at least 10,000 shares traded since the start of the bar, so the bar is rarely exactly 10,000 shares), there may be a flurry of activity to influence the final appearance of the bar. One side might want to demonstrate a willingness to make the bar appear more bullish or bearish. In simplest terms, a strong bull trend bar means that the bulls owned the bar. It is very common in strong trends for a reversal bar to totally reverse its appearance in the final few seconds before a 5 minute bar closes.
@@ -527,3 +543,58 @@ The 5 elements are about 3 things:
 </details>
 
 # End: Base my trades on Probability
+
+
+# Start: Questions on Pension Funds && Insurance Companies
+
+<details>
+<summary> Questions on Pension Funds && Insurance Companies </summary>
+
+```
+In my notes, I wrote this: "
+ - I can't believe institutions(/Smart Money) like Pension Funds and Insurance Companies trade the markets! But I'm not surprised that institutions like Banks, Mutual Funds, Hedge Funds, and Brokerage Houses do.
+". 
+I still can't believe that Pension Funds and Insurance Companies trade the markets!
+
+How!? It doesn't make sense! Aren't they supposed to be keeping people's money and not trading it? Why are they allowed to? 
+```
+It feels completely counter-intuitive at first. When we think of a "Pension Fund," we think of a secure vault where our retirement money sits waiting for us. But in the world of high-finance, a vault is actually the most dangerous place for money to be.
+
+Here is the breakdown of why these "safe" institutions are actually some of the biggest players in the market:
+
+### 1. The Battle Against Inflation
+If a pension fund simply collected money and put it in a giant safe, that money would lose value every single year due to **inflation**. 
+
+If you put $\$1,000$ in a drawer today, it might buy a high-end laptop. In 30 years, that same $\$1,000$ might only buy a pair of headphones. To ensure that the money you contribute today has the same (or more) purchasing power when you retire in 2050, the fund **must** grow that money by at least $3\%\text{--}5\%$ per year. The only way to do that is to invest it in the markets.
+
+
+
+### 2. The "Liability" Problem
+Insurance companies and pension funds have what are called **liabilities**. An insurance company "promises" to pay out if your car is totaled; a pension fund "promises" to pay you a monthly check until you die.
+
+They use complex mathematical models to realize that the premiums they collect aren't enough to cover all those future promises. They rely on the **compounded returns** from the stock and bond markets to fill the gap between what they have now and what they owe later.
+
+### 3. They are the "Whales" of the Trend
+This is why Al Brooks mentions them. Because these institutions are so massive, they can’t just "click a button" and buy everything they want at once. 
+
+* If a pension fund wants to buy $\$500$ million worth of Apple stock, they have to buy it in small chunks over days or weeks so they don't spike the price too fast.
+* This "slow accumulation" is exactly what creates the **Trends** you see on your charts. 
+
+When Brooks talks about "Institutional Money," he's talking about these giants moving their weight around. They aren't "day trading" for fun; they are slowly repositioning billions of dollars, and your job as a price action trader is to spot that giant footprint and hop on for the ride.
+
+### 4. Why are they allowed to? (Regulation)
+They aren't allowed to trade like a "Wall Street Bet" gambler. They are governed by **Fiduciary Duty**, which means they are legally required to act in the best interest of the people whose money they hold. 
+
+Because of this, they usually trade very "boring" and "safe" assets (like government bonds or blue-chip stocks). However, "boring" trading at a multi-billion dollar scale still moves the market charts just as much as a flashy hedge fund does.
+
+---
+
+### Does this change how you look at the charts?
+Knowing that a "Bull Trend" might just be a massive Pension Fund slowly buying into a position over three days makes the market feel less like a "casino" and more like a **logistics operation**. 
+
+Would you like to look at how Brooks suggests identifying the "start" of these institutional moves?
+
+
+</details>
+
+# End: Questions on Pension Funds && Insurance Companies
