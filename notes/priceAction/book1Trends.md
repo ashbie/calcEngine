@@ -40,7 +40,10 @@
  - Brooks said all these institutions make a living by trading
  - My job is to follow institutions behavior. To do what they do.
  - How can I tell what they did during the day? If the market went up, then more money went into buying. If it went down, then more money went into selling.
- - Computers are now doing a lot of trading. They can instantly analyse economic data, and statistically analyse price action THEN place trades based on that analysis.
+ - Traditional institutions mostly trade on Fundamentals.
+ - Their trading controls the direction of the market on daily and weekly charts as well as most of the big intra-day swings
+ - Trading used to done by smart traders, but now Computers are now doing a lot of trading. They can instantly analyse economic data, and statistically analyse price action THEN place trades based on that analysis.
+ - Computer-generated trading now accounts for 70% of daily volume, so it won't be long till computers are doing 100% of the trading.
 
 </details>
 
