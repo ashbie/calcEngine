@@ -619,8 +619,13 @@ Your notes stress **disjoint vs overlapping**, which is right. They don’t yet 
 
 **3. No written recurrence**  
 The code implies  
-\(r(n) = \max_{1 \le i \le n}(p_i + r(n-i))\),  
-with \(r(0)=0\).  
+$$
+r(n) = max_{1 \le i \leq n}(p_{i} + r(n-i))
+$$,  
+with 
+$$
+r(0)=0 
+$$.  
 A single displayed equation in the notes would tie the CLRS steps to the loops.
 
 **4. No complexities**  
